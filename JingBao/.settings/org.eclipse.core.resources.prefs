@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
 encoding//WebRoot/back/addManager.jsp=UTF-8
 encoding//WebRoot/back/addNews.jsp=UTF-8
+encoding//WebRoot/back/image/left.jsp=UTF-8
+encoding//WebRoot/back/image/right.jsp=UTF-8
 encoding//WebRoot/back/index.jsp=UTF-8
 encoding//WebRoot/back/managerNews.jsp=UTF-8
 encoding//WebRoot/back/managerProduct.jsp=UTF-8
