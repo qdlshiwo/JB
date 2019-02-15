@@ -25,8 +25,8 @@
 </head>
 
 <body>
-	This is my JSP page.
-	<br>
+	
+
 	<form action="addManager.jsp" name="form1" method="post">
 		<table cellspacing="1" cellpadding="4" width="100%"
 			class="tableborder" id="table3">
