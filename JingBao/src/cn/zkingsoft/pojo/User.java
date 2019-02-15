@@ -9,7 +9,7 @@ public class User {
 	private String telephone ;
 	private String introduce ;
 	private String activeCode;
-	private int state;
+	private Integer state;
 	private String role;
 	private String regisTime;
 	public User() {
