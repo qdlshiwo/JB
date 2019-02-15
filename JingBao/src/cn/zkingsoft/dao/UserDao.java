@@ -1,5 +1,15 @@
 package cn.zkingsoft.dao;
+import cn.zkingsoft.pojo.User;
 
-public class UserDao {
+import java.sql.Connection;
+import java.util.List;
+import java.util.Map;
 
+public interface UserDao {
+	boolean addUser(User user,Connection conn) throws Exception;
+	boolean deleteUser(User user,Connection conn) throws Exception;
+	boolean updateUser(User user,Connection conn) throws Exception;
+	User selectUserById(String id,Connection conn) throws Exception;
+	public List<User> selectAllUserByCondition(Connection conn) throws Exception;
+	public List<User> selectAllUserByCondition(Connection conn,Map<String, String> condition) throws Exception;
 }
