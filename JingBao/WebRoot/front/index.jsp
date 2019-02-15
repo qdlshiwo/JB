@@ -64,23 +64,23 @@ BODY {
 				<TD><IMG height=40 src="image/d_r3_c1.jpg" width=60><IMG
 					height=40 src="image/top_red.jpg" width=20 border=0><IMG
 					height=40 src="image/top_red.jpg" width=20 border=0><A
-					href="http://localhost:8080/company/index.jsp"><IMG height=40
+					href="http://localhost:8080/JingBao/front/index.jsp"><IMG height=40
 						src="image/d_r3_c5.jpg" width=64 border=0></A><IMG height=40
 					src="image/top_red.jpg" width=20 border=0><A
-					href="http://localhost:8080/company/showProductList.jsp"><IMG
+					href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 						id=image1 height=40 src="image/d_r3_c7.jpg" width=94 border=0
 						name=image1></A><IMG height=40 src="image/top_red.jpg" width=20
 					border=0><A
-					href="http://localhost:8080/company/showNewsList.jsp"><IMG
+					href="http://localhost:8080/JingBao/front/showNewsList.jsp"><IMG
 						height=40 src="image/d_r3_c8.jpg" width=93 border=0></A><IMG
 					height=40 src="image/top_red.jpg" width=20 border=0><A
-					onclick=openChat() href="http://localhost:8080/company/#"><IMG
+					onclick=openChat() href="http://localhost:8080/JingBao/front/#"><IMG
 						height=40 src="image/d_r3_c9.jpg" width=95 border=0></A><IMG
 					height=40 src="image/top_red.jpg" width=20 border=0><A
-					href="http://localhost:8080/company/messageBoard.jsp" target=_blank><IMG
+					href="http://localhost:8080/JingBao/front/messageBoard.jsp" target=_blank><IMG
 						height=40 src="image/d_r3_c10.jpg" width=93 border=0></A><IMG
 					height=40 src="image/top_red.jpg" width=20 border=0><A
-					href="http://localhost:8080/company/login.jsp"><IMG height=40
+					href="http://localhost:8080/JingBao/front/login.jsp"><IMG height=40
 						src="image/d_r3_c13.jpg" width=85 border=0></A><IMG height=40
 					src="image/top_red.jpg" width=20 border=0><IMG height=40
 					src="image/top_red.jpg" width=20 border=0><IMG height=40
@@ -113,7 +113,7 @@ BODY {
 											</TR>
 											<TR>
 												<TD colSpan=2 height=26>&nbsp;<A class=dong06
-													href="http://localhost:8080/company/detailNews.jsp?newsID=11">索尼W55降价送卡&nbsp;&nbsp;&nbsp;<FONT
+													href="http://localhost:8080/JingBao/front/detailNews.jsp?newsID=11">索尼W55降价送卡&nbsp;&nbsp;&nbsp;<FONT
 														color=#ff0000>[2007-10-07]</FONT></A></TD>
 											</TR>
 											<TR>
@@ -122,7 +122,7 @@ BODY {
 											</TR>
 											<TR>
 												<TD colSpan=2 height=26>&nbsp;<A class=dong06
-													href="http://localhost:8080/company/detailNews.jsp?newsID=10">理光R5不到二千&nbsp;&nbsp;&nbsp;<FONT
+													href="http://localhost:8080/JingBao/front/detailNews.jsp?newsID=10">理光R5不到二千&nbsp;&nbsp;&nbsp;<FONT
 														color=#ff0000>[2007-10-06]</FONT></A></TD>
 											</TR>
 											<TR>
@@ -131,7 +131,7 @@ BODY {
 											</TR>
 											<TR>
 												<TD colSpan=2 height=26>&nbsp;<A class=dong06
-													href="http://localhost:8080/company/detailNews.jsp?newsID=9">MP4关注度排行TOP10&nbsp;&nbsp;&nbsp;<FONT
+													href="http://localhost:8080/JingBao/front/detailNews.jsp?newsID=9">MP4关注度排行TOP10&nbsp;&nbsp;&nbsp;<FONT
 														color=#ff0000>[2007-10-05]</FONT></A></TD>
 											</TR>
 											<TR>
@@ -140,7 +140,7 @@ BODY {
 											</TR>
 											<TR>
 												<TD colSpan=2 height=26>&nbsp;<A class=dong06
-													href="http://localhost:8080/company/detailNews.jsp?newsID=8">单反与镜头组合&nbsp;&nbsp;&nbsp;<FONT
+													href="http://localhost:8080/JingBao/front/detailNews.jsp?newsID=8">单反与镜头组合&nbsp;&nbsp;&nbsp;<FONT
 														color=#ff0000>[2007-10-05]</FONT></A></TD>
 											</TR>
 											<TR>
@@ -149,7 +149,7 @@ BODY {
 											</TR>
 											<TR>
 												<TD colSpan=2 height=26>&nbsp;<A class=dong06
-													href="http://localhost:8080/company/detailNews.jsp?newsID=7">国庆各品牌最好卖的相机&nbsp;&nbsp;&nbsp;<FONT
+													href="http://localhost:8080/JingBao/front/detailNews.jsp?newsID=7">国庆各品牌最好卖的相机&nbsp;&nbsp;&nbsp;<FONT
 														color=#ff0000>[2007-10-04]</FONT></A></TD>
 											</TR>
 											<TR>
@@ -158,7 +158,7 @@ BODY {
 											</TR>
 											<TR>
 												<TD colSpan=2 height=26>&nbsp;<A class=dong06
-													href="http://localhost:8080/company/detailNews.jsp?newsID=6">国庆期间降价最猛八款数码相机&nbsp;&nbsp;&nbsp;<FONT
+													href="http://localhost:8080/JingBao/front/detailNews.jsp?newsID=6">国庆期间降价最猛八款数码相机&nbsp;&nbsp;&nbsp;<FONT
 														color=#ff0000>[2007-10-03]</FONT></A></TD>
 											</TR>
 											<TR>
@@ -167,7 +167,7 @@ BODY {
 											</TR>
 											<TR>
 												<TD colSpan=2 height=26>&nbsp;<A class=dong06
-													href="http://localhost:8080/company/detailNews.jsp?newsID=5">三星女性翻盖E428行货仅1180&nbsp;&nbsp;&nbsp;<FONT
+													href="http://localhost:8080/JingBao/front/detailNews.jsp?newsID=5">三星女性翻盖E428行货仅1180&nbsp;&nbsp;&nbsp;<FONT
 														color=#ff0000>[2007-10-02]</FONT></A></TD>
 											</TR>
 											<TR>
@@ -176,7 +176,7 @@ BODY {
 											</TR>
 											<TR>
 												<TD align=right colSpan=2><A
-													href="http://localhost:8080/company/#"><IMG height=33
+													href="http://localhost:8080/JingBao/front/#"><IMG height=33
 														src="image/d_r11_c15.jpg" width=51 border=0></A></TD>
 											</TR>
 										</TBODY>
@@ -187,22 +187,22 @@ BODY {
 										<TBODY>
 											<TR>
 												<TD><A
-													href="http://localhost:8080/company/showProductList.jsp"><IMG
+													href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 														height=63 src="image/d_r11_5_r1_c1.jpg" width=268 border=0></A></TD>
 											</TR>
 											<TR>
 												<TD><A
-													href="http://localhost:8080/company/showProductList.jsp"><IMG
+													href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 														height=59 src="image/d_r11_5_r3_c1.jpg" width=268 border=0></A></TD>
 											</TR>
 											<TR>
 												<TD><A
-													href="http://localhost:8080/company/showProductList.jsp"><IMG
+													href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 														height=61 src="image/d_r11_5_r4_c1.jpg" width=268 border=0></A></TD>
 											</TR>
 											<TR>
 												<TD><A
-													href="http://localhost:8080/company/showProductList.jsp"><IMG
+													href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 														height=64 src="image/d_r11_5_r5_c1.jpg" width=268 border=0></A></TD>
 											</TR>
 										</TBODY>
@@ -217,7 +217,7 @@ BODY {
 								<TD background=image/d_r11_8.jpg><IMG height=27
 									src="image/d_r13_c1.jpg" width=160></TD>
 								<TD align=right background=image/d_r11_8.jpg><A
-									href="http://localhost:8080/company/#"><IMG height=27
+									href="http://localhost:8080/JingBao/front/#"><IMG height=27
 										src="image/d_r13_c21.jpg" width=66 border=0></A></TD>
 							</TR>
 						</TBODY>
@@ -226,30 +226,30 @@ BODY {
 						<TBODY>
 							<TR>
 								<TD align=middle width="25%"><A
-									href="http://localhost:8080/company/showProductList.jsp"><IMG
+									href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 										height=112 src="image/d_r11_10_r1_c1.jpg" width=143 border=0></A></TD>
 								<TD align=middle width="25%"><A
-									href="http://localhost:8080/company/showProductList.jsp"><IMG
+									href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 										height=112 src="image/d_r11_10_r1_c8.jpg" width=142 border=0></A></TD>
 								<TD align=middle width="25%"><A
-									href="http://localhost:8080/company/showProductList.jsp"><IMG
+									href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 										height=112 src="image/d_r11_10_r1_c16.jpg" width=141 border=0></A></TD>
 								<TD align=middle width="25%"><A
-									href="http://localhost:8080/company/showProductList.jsp"><IMG
+									href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 										height=112 src="image/d_r11_10_r1_c22.jpg" width=142 border=0></A></TD>
 							</TR>
 							<TR>
 								<TD align=middle width="25%"><A
-									href="http://localhost:8080/company/showProductList.jsp"><IMG
+									href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 										height=112 src="image/d_r11_10_r1_c2.jpg" width=143 border=0></A></TD>
 								<TD align=middle width="25%"><A
-									href="http://localhost:8080/company/showProductList.jsp"><IMG
+									href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 										height=112 src="image/d_r11_10_r1_c81.jpg" width=142 border=0></A></TD>
 								<TD align=middle width="25%"><A
-									href="http://localhost:8080/company/showProductList.jsp"><IMG
+									href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 										height=112 src="image/d_r11_10_r1_c116.jpg" width=141 border=0></A></TD>
 								<TD align=middle width="25%"><A
-									href="http://localhost:8080/company/showProductList.jsp"><IMG
+									href="http://localhost:8080/JingBao/front/showProductList.jsp"><IMG
 										height=112 src="image/d_r11_10_r1_c221.jpg" width=142 border=0></A></TD>
 							</TR>
 						</TBODY>
@@ -263,7 +263,7 @@ BODY {
 								<TD width="25%" background=image/d_r11_11_r1_c15.jpg><IMG
 									height=27 src="image/d_r11_11_r1_c21.jpg" width=160></TD>
 								<TD align=right width="25%" background=image/d_r11_11_r1_c15.jpg><A
-									href="http://localhost:8080/company/#"><IMG height=27
+									href="http://localhost:8080/JingBao/front/#"><IMG height=27
 										src="image/d_r11_11_r1_c30.jpg" width=63 border=0></A></TD>
 							</TR>
 							<TR>
@@ -326,7 +326,7 @@ BODY {
 						<TBODY>
 							<TR>
 								<TD vAlign=top><A
-									href="http://localhost:8080/company/cgal.asp"><IMG
+									href="http://localhost:8080/JingBao/front/cgal.asp"><IMG
 										height=42 src="image/d_r11_6.jpg" width=175 border=0></A></TD>
 							</TR>
 							<TR>

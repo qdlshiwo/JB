@@ -5,13 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 public class DBHelper {
-	private static Properties prop = new Properties();
+	private static Context context = null;
+	private static DataSource ds = null;
 	static{
-		
 		try {
-			prop.load(DBHelper.class.getClassLoader().getResourceAsStream("db.properties"));
-			Class.forName(prop.getProperty("driver"));
+			context = new InitialContext();
+			ds = (DataSource)context.lookup("java:comp/env/mysql");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
@@ -23,7 +27,7 @@ public class DBHelper {
 	public static Connection getConnection(){
 		Connection conn = null;
 		try {
-			conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("name"), prop.getProperty("password"));
+			conn = ds.getConnection();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
