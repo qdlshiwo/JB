@@ -20,8 +20,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<link rel="stylesheet" href="front/css/xiaomi.css"/>
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-    <script src="js/jquery.animate-colors-min.js"></script>
+    <script type="text/javascript" src="front/js/jquery-2.1.4.min.js"></script>
+    <script src="front/js/jquery.animate-colors-min.js"></script>
 	
   </head>
   
