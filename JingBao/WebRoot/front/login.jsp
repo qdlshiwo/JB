@@ -8,6 +8,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML>
 <HEAD>
+<base href="<%=basePath%>">
 <META http-equiv=Content-Type content="text/html; charset=gb2312">
 <META content="MSHTML 6.00.2900.5726" name=GENERATOR>
 <meta charset="UTF-8">
@@ -43,7 +44,7 @@
 			<div class="login">
 				<form method="post" style="border: 1px solid white;">
 					<div id="login1">
-						<button id="btn1"></button>
+						<button id="btn1" ></button>
 						<h4>密码登录</h4>
 						<input type="text" name="user" placeholder="用户名：" required="required" />
 						<input type="password" name="password" placeholder="密码：" required="required" />
