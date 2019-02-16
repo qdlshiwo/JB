@@ -142,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      </div>
                      <span class="menu_content_line"></span>
                      <div class="menu_content">
-                         <img src="img/mipad64!160x110.jpg">
+                         <img src="front/img/mipad64!160x110.jpg">
                          <p class="menu_content_tit">大米平板64G</p>
                          <p class="menu_content_price">1499元起</p>
                      </div>
