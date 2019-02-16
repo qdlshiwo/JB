@@ -16,7 +16,9 @@ BODY {
 	MARGIN: 0px
 }
 </STYLE>
-
+<script type="text/javascript">
+	func
+</script>
 <META content="MSHTML 6.00.2900.5726" name=GENERATOR>
 </HEAD>
 <BODY>
