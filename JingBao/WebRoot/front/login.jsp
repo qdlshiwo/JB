@@ -12,8 +12,8 @@
 <META content="MSHTML 6.00.2900.5726" name=GENERATOR>
 <meta charset="UTF-8">
 		<title>理想生活上天猫</title>
-		<link rel="stylesheet" type="text/css" href="css/login.css" />
-		<script src="js/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="front/css/login.css" />
+		<script src="front/js/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
 				$("#login2").hide();
@@ -37,7 +37,7 @@
 		<div id="tt">
 			<div class="headtop">
 				<a href="" title="天猫" target="_top">
-					<img src="img/top.png"  height="26px"/>
+					<img src="front/img/top.png"  height="26px"/>
 				</a>
 			</div>
 			<div class="login">
