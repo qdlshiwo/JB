@@ -130,7 +130,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                      <span class="menu_content_line"></span>
                      <div class="menu_content">
                          <img src="front/img/note2!160x110.jpg">
-                         <p class="menu_content_tit">红米NOTE2</p>
+                         <p class="menu_content_tit">红米NOTE2</p>.
                          <p class="menu_content_price">799元</p>
                      </div>
                  </li>
