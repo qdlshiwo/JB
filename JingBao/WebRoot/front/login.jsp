@@ -42,7 +42,7 @@
 				</a>
 			</div>
 			<div class="login">
-				<form method="post" style="border: 1px solid white;">
+				<form action="loginAction.jsp" method="post" style="border: 1px solid white;">
 					<div id="login1">
 						<button id="btn1" ></button>
 						<h4>密码登录</h4>
