@@ -14,7 +14,7 @@ public class Sptab {
 	private String neicun;//ÄÚ´æ
 	private String yingpan;//Ó²ÅÌ
 	private Integer kucun;//¿â´æ
-	private Integer zhuangtai;//×´Ì¬
+	private Integer pstate;//×´Ì¬
 	private String pinglun;//¸ÃÉÌÆ·ÆÀÂÛid£¨1£¬2£¬3£¬4...£©
 	public Sptab() {
 		super();
@@ -22,7 +22,7 @@ public class Sptab {
 	}
 	public Sptab(String pid, String pname, Double price, String category, String pnum, String imgurl,
 			String description, String color, String cpu, String gpu, String neicun, String yingpan, Integer kucun,
-			Integer zhuangtai, String pinglun) {
+			Integer pstate, String pinglun) {
 		super();
 		this.pid = pid;
 		this.pname = pname;
@@ -37,7 +37,7 @@ public class Sptab {
 		this.neicun = neicun;
 		this.yingpan = yingpan;
 		this.kucun = kucun;
-		this.zhuangtai = zhuangtai;
+		this.pstate = pstate;
 		this.pinglun = pinglun;
 	}
 	public String getPid() {
@@ -118,11 +118,11 @@ public class Sptab {
 	public void setKucun(Integer kucun) {
 		this.kucun = kucun;
 	}
-	public Integer getZhuangtai() {
-		return zhuangtai;
+	public Integer getPstate() {
+		return pstate;
 	}
-	public void setZhuangtai(Integer zhuangtai) {
-		this.zhuangtai = zhuangtai;
+	public void setPstate(Integer pstate) {
+		this.pstate = pstate;
 	}
 	public String getPinglun() {
 		return pinglun;

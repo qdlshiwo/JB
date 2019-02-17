@@ -7,15 +7,17 @@ import java.util.Map;
 import cn.zkingsoft.pojo.Sptab;
 
 public interface SptabDao {
-	boolean addSptab(Sptab Sptab, Connection conn) throws Exception;
+	boolean addSptab(Sptab sptab, Connection conn) throws Exception;
 
-	boolean deleteSptab(Sptab Sptab, Connection conn) throws Exception;
+	boolean deleteSptab(Sptab sptab, Connection conn) throws Exception;
 
-	boolean updateSptab(Sptab Sptab, Connection conn) throws Exception;
+	boolean updateSptab(Sptab sptab, Connection conn) throws Exception;
 
-	Sptab selectSptabById(String id, Connection conn) throws Exception;
+	public Sptab selectSptabById(String pid, Connection conn) throws Exception;
 
 	public List<Sptab> selectAllSptabByCondition(Connection conn) throws Exception;
 
 	public List<Sptab> selectAllSptabByCondition(Connection conn, Map<String, String> condition) throws Exception;
+	
+	public Sptab selectSptabByPname(String pname, Connection conn) throws Exception;
 }
