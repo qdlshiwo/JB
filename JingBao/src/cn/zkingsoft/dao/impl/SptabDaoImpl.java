@@ -71,7 +71,7 @@ public class SptabDaoImpl implements SptabDao{
 	@Override
 	public boolean updateSptab(Sptab sptab, Connection conn) throws Exception {
 		boolean flag = false;
-		String sql = "delete from web_sptab where pid=?";
+		String sql = "";
 		PreparedStatement ps = null;
 		ps = conn.prepareStatement(sql);
 		ps.setString(1, sptab.getPid());

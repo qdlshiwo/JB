@@ -6,15 +6,15 @@ import java.util.Map;
 import cn.zkingsoft.pojo.Sptab;
 
 public interface SptabService {
-	public boolean addSptabs(Sptab Sptabs) throws Exception;
+	public boolean addSptabs(Sptab sptab);
 
-	public boolean updateSptabs(Sptab Sptabs) throws Exception;
+	public boolean updateSptabs(Sptab sptab);
 
-	public boolean removeSptabs(String id) throws Exception;
+	public boolean removeSptabs(Sptab sptab);
 
-	public Sptab selectSptabsById(String uid) throws Exception;
+	public Sptab selectSptabsById(String pid);
 
-	public List<Sptab> selectSptabsByCondition() throws Exception;
+	public List<Sptab> selectSptabsByCondition();
 
-	public List<Sptab> selectSptabsByCondition(Map<String, String> condition) throws Exception;
+	public List<Sptab> selectSptabsByCondition(Map<String, String> condition);
 }
