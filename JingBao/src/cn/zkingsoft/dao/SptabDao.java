@@ -1,10 +1,10 @@
 package cn.zkingsoft.dao;
 
+import cn.zkingsoft.pojo.Sptab;
 import java.sql.Connection;
 import java.util.List;
 import java.util.Map;
 
-import cn.zkingsoft.pojo.Sptab;
 
 public interface SptabDao {
 	boolean addSptab(Sptab sptab, Connection conn) throws Exception;

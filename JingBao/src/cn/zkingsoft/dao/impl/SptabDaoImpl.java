@@ -259,7 +259,6 @@ public class SptabDaoImpl implements SptabDao{
 		}
 		rs.close();
 		ps.close();
-
 		return sp;
 	}
 

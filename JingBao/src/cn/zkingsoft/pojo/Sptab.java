@@ -14,7 +14,7 @@ public class Sptab {
 	private String neicun;//内存
 	private String yingpan;//硬盘
 	private Integer kucun;//库存
-	private Integer pstate;//状态
+	private Integer pstate;//商品状态
 	private String pinglun;//该商品评论id（1，2，3，4...）
 	public Sptab() {
 		super();
