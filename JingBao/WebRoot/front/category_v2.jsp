@@ -37,9 +37,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<link rel="stylesheet" href="css/fontello-ie7.css">
 		<![endif]-->
         <script type="text/javascript">
-			function choiceSpt(name){
-				if(confirm("您真的确认添加"+name+"吗？")){
-					location.href="";
+			function choiceSpt(id){
+				if(confirm("您真的确认添加该件商品吗？"+id)){
+					location.href="order_info.jsp?pid="+id;
 				}
 			}
 		</script>
@@ -560,6 +560,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                    			for(int i=0;i<list.size();i++){
     						Sptab s = list.get(i);
                     %>
+                    
                    <div class="row"> 
                         <!-- Product Item -->
                         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -587,7 +588,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         <span class="add-to-cart">
                                             <span class="action-wrapper">
                                                 <i class="icons icon-basket-2"></i>
-                                                <span class="action-name" onclick="javascript:choiceSpt('<%=s.getPname()%>')">Add to cart</span>
+                                                <span class="action-name" onclick="javascript:choiceSpt('<%=s.getPid()%>')">Add to cart</span>
                                             </span>
                                         </span>
                                         <span class="add-to-favorites">
