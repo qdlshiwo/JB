@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao {
 		ps.setString(10, user.getRole());
 		ps.setString(11, user.getRegistime());
 		int n = ps.executeUpdate();
-		ps.close();
+		System.out.println(n);
 		if (n > 0) {
 			return true;
 		} else {

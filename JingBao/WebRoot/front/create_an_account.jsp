@@ -604,7 +604,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Telephone</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="text" name="telephone">
+										<input type="text" name="telphone">
 									</div>
 
 								</div>
@@ -615,7 +615,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Username*</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="text" name="username">
+										<input type="text" name="uname">
 									</div>
 
 								</div>
@@ -639,7 +639,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Password</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="password" name="password">
+										<input type="password" name="upass">
 									</div>
 
 								</div>
@@ -650,7 +650,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Confirm Password</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="password" name="confirmpassword">
+										<input type="password" name="reupass">
 									</div>
 
 								</div>
@@ -661,7 +661,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Introduce</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<textarea name="introduce" placeholder="please input your introduce"></textarea>
+										<textarea name="info" placeholder="please input your introduce"></textarea>
 									</div>
 
 								</div>

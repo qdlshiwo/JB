@@ -32,15 +32,19 @@ public class RegisterAction extends DispatcherAction {
 		user.setId("主键id1");
 		user.setUsername(rf.getUname());
 		user.setPassword(rf.getUpass());
+		System.out.println(rf.getSex());
 		user.setGender(rf.getSex());
 		user.setEmail(rf.getEmail());
 		user.setTelephone(rf.getTelphone());
 		user.setIntroduce(rf.getInfo());
-		user.setActivecode(null);
+		user.setActivecode("123");
 		user.setState(0);
 		user.setRole("权限1");
 		user.setRegistime("当前时间1");
+		System.out.println(rf.getParam());
+		System.out.println(user.toString());
 		boolean flag = us.addUsers(user);
+		System.out.println(flag);
 		if(flag){
 			//req.getSession().setAttribute("user", uf);
 			return new ActionForward(true, "loginandregisterhtml");
