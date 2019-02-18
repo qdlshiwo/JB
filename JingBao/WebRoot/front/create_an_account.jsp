@@ -524,6 +524,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 				<section class="main-content col-lg-9 col-md-9 col-sm-9">
 
+                  <from action="" method="post">
 					<div class="row">
 
 						<div class="col-lg-12 col-md-12 col-sm-12">
@@ -554,7 +555,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<br/><br/>
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-6 align-left">
-										<input type="submit" class="orange" value="Login">
+										<input type="button" class="orange" value="Login" onclick="jump('denglu')">
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-6 align-right">
 										<small>
@@ -570,8 +571,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 
 					</div>
+				</from>
 
-                    <form action="" method="post">
+                    <form action="register.do" method="post">
 					<div class="row">
 
 						<div class="col-lg-12 col-md-12 col-sm-12 register-account">
@@ -834,7 +836,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</div>
 
 									<div class="col-lg-12 col-md-12 col-sm-12">
-										<input class="big" type="submit" value="Register">
+										<input class="big" type="button" value="Register" onclick="jump('zhuce')">
 										<input class="big" type="reset" value="Cancel">
 									</div>
 
