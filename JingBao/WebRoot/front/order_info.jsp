@@ -1,3 +1,6 @@
+<%@page import="cn.zkingsoft.pojo.Sptab"%>
+<%@page import="cn.zkingsoft.service.impl.SptabServiceImpl"%>
+<%@page import="cn.zkingsoft.service.SptabService"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
@@ -444,12 +447,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             	
                                 <tr>
                                 	<th>Order number</th>
-                                    <td>21512512</td>
+                                    <td><%=request.getParameter("pid") %></td>
                                 </tr> 
-                                
+                                 <%
+                                 	SptabService spt=new SptabServiceImpl();
+									Sptab s=spt.selectSptabsById(request.getParameter("pid"));
+                                  %>
                                 <tr>
-                                	<th>Order date</th>
-                                    <td>2013-07-12</td>
+                                	<th>Order Name</th>
+                                    <td><%=s.getPname() %></td>
                                 </tr>
                                 
                                 <tr>
@@ -458,28 +464,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </tr>
                                 
                                 <tr>
-                                	<th>Last updated</th>
-                                    <td>2013-07-12</td>
+                                	<th>Order date</th>
+                                    <td>2019-02-20</td>
                                 </tr>
                                 
                                 <tr>
-                                	<th>Shipment</th>
-                                    <td>--</td>
+                                	<th>Order category</th>
+                                    <td><%=s.getCategory() %></td>
                                 </tr>
                                 
                                 <tr>
-                                	<th>Comment</th>
-                                    <td>Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. </td>
+                                	<th>Order description</th>
+                                    <td><%=s.getDescription() %></td>
                                 </tr>
                                 
 								<tr>
-                                	<th>Payment</th>
-                                    <td>PayPal</td>
+                                	<th>Order kucun</th>
+                                    <td><%=s.getKucun() %></td>
                                 </tr>
 								
                                 <tr>
-                                	<th>Total</th>
-                                    <td><span class="price">$281.00</span></td>
+                                	<th>Order price</th>
+                                    <td><span class="price"><%=s.getPrice() %></span></td>
                                 </tr>                    
                                 
                             </table>
