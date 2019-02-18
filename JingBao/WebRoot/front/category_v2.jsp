@@ -607,7 +607,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<div class="rating readonly-rating" data-score="4"></div>
 											<span>3 Review(s)</span>
 										</div>
-                                        <p><%=s.getPname() %> </p>		
+                                        <p><%=s.getDescription() %> </p>		
 									</div>
 
 
