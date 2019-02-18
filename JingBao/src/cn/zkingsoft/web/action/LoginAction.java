@@ -27,7 +27,7 @@ public class LoginAction extends DispatcherAction {
 		LoginForm uf = (LoginForm) form;
 		UserService us = new UserServiceImpl();
 		try {
-			User user = us.selectUsersById(uf.getUname());
+			User user = us.selectUserByUsername(uf.getUname());
 			if (user != null) {
 				if (user.getPassword().equals(uf.getUpass())) {
 					System.out.println("µÇÂ¼³É¹¦£¡");

@@ -1,8 +1,6 @@
 package cn.zkingsoft.pojo;
 
-import java.io.Serializable;
-
-public class User implements Serializable{
+public class User {
 	private String id ;
 	private String username ;
 	private String password ;
@@ -10,16 +8,16 @@ public class User implements Serializable{
 	private String email ;
 	private String telephone ;
 	private String introduce ;
-	private String activeCode;
+	private String activecode;
 	private Integer state;
 	private String role;
-	private String regisTime;
+	private String registime;
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public User(String id, String username, String password, String gender, String email, String telephone,
-			String introduce, String activeCode, int state, String role, String regisTime) {
+			String introduce, String activecode, Integer state, String role, String registime) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -28,10 +26,10 @@ public class User implements Serializable{
 		this.email = email;
 		this.telephone = telephone;
 		this.introduce = introduce;
-		this.activeCode = activeCode;
+		this.activecode = activecode;
 		this.state = state;
 		this.role = role;
-		this.regisTime = regisTime;
+		this.registime = registime;
 	}
 	public String getId() {
 		return id;
@@ -75,16 +73,16 @@ public class User implements Serializable{
 	public void setIntroduce(String introduce) {
 		this.introduce = introduce;
 	}
-	public String getActiveCode() {
-		return activeCode;
+	public String getActivecode() {
+		return activecode;
 	}
-	public void setActiveCode(String activeCode) {
-		this.activeCode = activeCode;
+	public void setActivecode(String activecode) {
+		this.activecode = activecode;
 	}
-	public int getState() {
+	public Integer getState() {
 		return state;
 	}
-	public void setState(int state) {
+	public void setState(Integer state) {
 		this.state = state;
 	}
 	public String getRole() {
@@ -93,11 +91,12 @@ public class User implements Serializable{
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public String getRegisTime() {
-		return regisTime;
+	public String getRegistime() {
+		return registime;
 	}
-	public void setRegisTime(String regisTime) {
-		this.regisTime = regisTime;
+	public void setRegistime(String registime) {
+		this.registime = registime;
 	}
+	
 	
 }
