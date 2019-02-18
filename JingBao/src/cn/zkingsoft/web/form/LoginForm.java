@@ -3,7 +3,11 @@ package cn.zkingsoft.web.form;
 import java.io.Serializable;
 
 import cn.zkingsoft.web.core.ActionForm;
-
+/**
+ * ÕâÊÇµÇÂ¼µÄform
+ * @author Lxp
+ *
+ */
 public class LoginForm extends ActionForm implements Serializable{
 	private String uname;
 	private String upass;

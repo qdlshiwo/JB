@@ -1,6 +1,6 @@
 package cn.zkingsoft.web.action;
 /**
- * 这是一商品的action
+ * 这是商品的action
  * @author Lxp
  *
  */

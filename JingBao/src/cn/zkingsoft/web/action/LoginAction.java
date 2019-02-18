@@ -12,7 +12,7 @@ import cn.zkingsoft.web.core.DispatcherAction;
 import cn.zkingsoft.web.form.LoginForm;
 
 /**
- * 
+ * ÕâÊÇµÇÂ¼
  * @author Lxp
  *
  */

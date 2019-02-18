@@ -1,5 +1,9 @@
 package cn.zkingsoft.web.form;
-
+/**
+ * ÕâÊÇ×¢²áµÄform
+ * @author Lxp
+ *
+ */
 public class RegisterForm {
 	private String email;
 	private String telphone;
