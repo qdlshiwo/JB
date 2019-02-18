@@ -521,7 +521,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 
 				<!-- Main Content -->
-				<form action="" method="post">
+				
 				<section class="main-content col-lg-9 col-md-9 col-sm-9">
 
 					<div class="row">
@@ -571,6 +571,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 					</div>
 
+                    <form action="" method="post">
 					<div class="row">
 
 						<div class="col-lg-12 col-md-12 col-sm-12 register-account">
@@ -843,9 +844,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 
 					</div>
-
+                   </form>
 				</section>
-				</form>
+				
 				<!-- /Main Content -->
 
 				<!-- Sidebar -->
