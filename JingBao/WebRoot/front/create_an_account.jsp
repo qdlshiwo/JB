@@ -262,7 +262,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 														</tr>
 														<tr>
 															<td>
-																<a href="#">£ Pound</a>
+																<a href="#">￡ Pound</a>
 															</td>
 														</tr>
 													</table>
@@ -524,7 +524,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 				<section class="main-content col-lg-9 col-md-9 col-sm-9">
 
-                  <from action="" method="post">
+                  <form  id="lform">
 					<div class="row">
 
 						<div class="col-lg-12 col-md-12 col-sm-12">
@@ -538,14 +538,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-6">
 										<div class="iconic-input">
-											<input type="text" placeholder="Username">
+											<input type="text" placeholder="username">
 											<i class="icons icon-user-3"></i>
 										</div>
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-6">
 										<div class="iconic-input">
-											<input type="text" placeholder="Password">
+											<input type="text" placeholder="password">
 											<i class="icons icon-lock"></i>
 										</div>
 									</div>
@@ -555,7 +555,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<br/><br/>
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-6 align-left">
-										<input type="button" class="orange" value="Login" onclick="jump('denglu')">
+										<input type="button" class="orange" value="Login" onclick="ljump('denglu')">
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-6 align-right">
 										<small>
@@ -571,9 +571,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 
 					</div>
-				</from>
+				</form>
 
-                    <form action="register.do" method="post">
+                    <form  id="rform">
 					<div class="row">
 
 						<div class="col-lg-12 col-md-12 col-sm-12 register-account">
@@ -1253,6 +1253,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		</div>
 		<!-- Container -->
+		<script type="text/javascript">
+		     function jump(val){
+		         var rform=document.getElementById("rform");
+			     rform.action="register.do?param="+val;
+			     rform.method="post";
+			     rform.submit();
+			 
+		     }
+		     function ljump(val){
+		         var lform=document.getElementById("lform");
+			     lform.action="login.do?param="+val;
+			     lform.method="post";
+			     lform.submit();
+			 
+		     }
+		     
+		</script>
 
 		<!-- JavaScript -->
 		<script src="js/modernizr.min.js"></script>
