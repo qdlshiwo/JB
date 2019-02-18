@@ -36,7 +36,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--[if IE 7]>
 			<link rel="stylesheet" href="css/fontello-ie7.css">
 		<![endif]-->
-        
+        <script type="text/javascript">
+			function choiceSpt(name){
+				if(confirm("您真的确认添加"+name+"吗？")){
+					location.href="";
+				}
+			}
+		</script>
     </head>
     
     
@@ -581,7 +587,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         <span class="add-to-cart">
                                             <span class="action-wrapper">
                                                 <i class="icons icon-basket-2"></i>
-                                                <span class="action-name">Add to cart</span>
+                                                <span class="action-name" onclick="javascript:choiceSpt('<%=s.getPname()%>')">Add to cart</span>
                                             </span>
                                         </span>
                                         <span class="add-to-favorites">
