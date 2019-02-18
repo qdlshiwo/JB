@@ -261,5 +261,64 @@ public class SptabDaoImpl implements SptabDao{
 		ps.close();
 		return sp;
 	}
-
+	
+	/**
+	 * 分页的方法
+	 * @param pageSize
+	 * @param pageNo
+	 * @return
+	 */
+	@Override
+	public List<Sptab> splitQuery(int pageSize, int pageNo, Connection conn) throws Exception {
+		// TODO Auto-generated method stub
+		List<Sptab>list = new ArrayList<Sptab>();
+		String sql = "select * from Spatb limit ?,?";
+		Sptab sp = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ps = conn.prepareStatement(sql);
+		ps.setInt(1, (pageNo-1)*pageSize);
+		ps.setInt(2, pageSize);
+		rs = ps.executeQuery();
+		while (rs.next()) {
+			sp = new Sptab();
+			sp.setPid(rs.getString("pid"));
+			sp.setPname(rs.getString("pname"));
+			sp.setPrice(rs.getDouble("price"));
+			sp.setCategory(rs.getString("category"));
+			sp.setPnum(rs.getString("pnum"));
+			sp.setImgurl(rs.getString("imgurl"));
+			sp.setDescription(rs.getString("description"));
+			sp.setColor(rs.getString("color"));
+			sp.setCpu(rs.getString("cpu"));
+			sp.setGpu(rs.getString("gpu"));
+			sp.setNeicun(rs.getString("neicun"));
+			sp.setYingpan(rs.getString("yingpan"));
+			sp.setKucun(rs.getInt("kucun"));
+			sp.setPstate(rs.getInt("pstate"));
+			sp.setPinglun(rs.getString("pinglun"));
+			list.add(sp);
+		}
+		rs.close();
+		ps.close();
+		return list;
+	}
+	/**
+	 * 获得最大页码的方法
+	 */
+	@Override
+	public int getMaxPageNo(int pageSize, Connection conn) throws Exception{
+		int count = 0;
+		String sql = "select count(*) from Sptab";
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ps = conn.prepareStatement(sql);
+		rs = ps.executeQuery();
+		if(rs.next()){
+			count = rs.getInt(1);
+		}
+		rs.close();
+		ps.close();
+		return count%pageSize==0 ? count/pageSize : count/pageSize+1;
+	}
 }

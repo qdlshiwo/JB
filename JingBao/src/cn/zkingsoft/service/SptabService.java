@@ -17,4 +17,8 @@ public interface SptabService {
 	public List<Sptab> selectSptabsByCondition();
 
 	public List<Sptab> selectSptabsByCondition(Map<String, String> condition);
+
+	public List<Sptab> selectSptabsSplit(int pageSize, int pageNo);
+
+	public int getMaxPageNo(int pageSize) ;
 }

@@ -134,5 +134,45 @@ public class SptabServiceImpl implements SptabService{
 		}
 		return list;
 	}
+
+	@Override
+	public List<Sptab> selectSptabsSplit(int pageSize, int pageNo) {
+		Connection conn = DBHelper.getConnection();
+		List<Sptab> list = null;
+		try {
+			conn.setAutoCommit(false);
+			list = spd.splitQuery(pageSize, pageNo, conn);
+			conn.commit();
+		} catch (Exception e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}finally{
+			DBHelper.closeConnection(conn);
+		}
+		return list;
+	}
+
+	@Override
+	public int getMaxPageNo(int pageSize) {
+		Connection conn = DBHelper.getConnection();
+		int count = 0;
+		try {
+			conn.setAutoCommit(false);
+			count = spd.getMaxPageNo(pageSize, conn);
+			conn.commit();
+		} catch (Exception e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}finally{
+			DBHelper.closeConnection(conn);
+		}
+		return count;
+	}
 	
 }
