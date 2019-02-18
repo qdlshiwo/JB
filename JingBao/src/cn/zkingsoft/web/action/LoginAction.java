@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.zkingsoft.pojo.User;
+import cn.zkingsoft.service.UserService;
+import cn.zkingsoft.service.impl.UserServiceImpl;
 import cn.zkingsoft.web.core.ActionForm;
 import cn.zkingsoft.web.core.ActionForward;
 import cn.zkingsoft.web.core.DispatcherAction;
@@ -13,22 +16,46 @@ import cn.zkingsoft.web.form.LoginForm;
 
 /**
  * 这是登录
+ * 
  * @author Lxp
  *
  */
-public class LoginAction extends DispatcherAction{
-	
+public class LoginAction extends DispatcherAction {
+
 	public ActionForward denglu(HttpServletRequest req, HttpServletResponse resp, ActionForm form)
 			throws ServletException, IOException {
-		LoginForm uf = (LoginForm)form;
-		if("lxp".equals(uf.getUname())&&"123".equals(uf.getUpass())){
-			//----------------
-			//这里留着查询service层的数据
-			//----------------
-			req.getSession().setAttribute("user", uf);
-			return new ActionForward(true,"main");
-		}else{
-			return new ActionForward(true,"login");
+		LoginForm uf = (LoginForm) form;
+		UserService us = new UserServiceImpl();
+		try {
+			User user = us.selectUsersById(uf.getUname());
+			if (user != null) {
+				if (user.getPassword().equals(uf.getUpass())) {
+					System.out.println("登录成功！");
+					req.getSession().setAttribute("loginmsg", "登录成功！");
+					req.getSession().setAttribute("user", uf);
+					return new ActionForward(true, "show");
+				} else {
+					System.out.println("密码错误！");
+					req.getSession().setAttribute("loginmsg", "密码错误！");
+					return new ActionForward(true, "loginandregisterhtml");
+				}
+			} else {
+				System.out.println("用户名错误！");
+				req.getSession().setAttribute("loginmsg", "用户名错误！");
+				return new ActionForward(true, "loginandregisterhtml");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
+		// if("lxp".equals(uf.getUname())&&"123".equals(uf.getUpass())){
+		// //----------------
+		// //这里留着查询service层的数据
+		// //----------------
+		// req.getSession().setAttribute("user", uf);
+		// return new ActionForward(true,"show");
+		// }else{
+		// return new ActionForward(true,"loginandregisterhtml");
+		// }
 	}
 }

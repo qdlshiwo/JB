@@ -6,6 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.zkingsoft.service.UserService;
+import cn.zkingsoft.service.impl.UserServiceImpl;
 import cn.zkingsoft.web.core.ActionForm;
 import cn.zkingsoft.web.core.ActionForward;
 import cn.zkingsoft.web.core.DispatcherAction;
@@ -20,15 +22,12 @@ public class RegisterAction extends DispatcherAction{
 	
 	public ActionForward zhuce(HttpServletRequest req, HttpServletResponse resp, ActionForm form)
 			throws ServletException, IOException {
-		RegisterForm uf = (RegisterForm)form;
-		if("lxp".equals(uf.getUname())&&"123".equals(uf.getUpass())){
-			//----------------
-			//这里留着查询service层的数据
-			//----------------
-			req.getSession().setAttribute("user", uf);
-			return new ActionForward(true,"main");
+		RegisterForm rf = (RegisterForm)form;
+		if(rf!=null){
+			//req.getSession().setAttribute("user", rf);
+			return new ActionForward(true,"loginandregisterhtml");
 		}else{
-			return new ActionForward(true,"login");
+			return new ActionForward(true,"loginandregisterhtml");
 		}
 	}
 }
