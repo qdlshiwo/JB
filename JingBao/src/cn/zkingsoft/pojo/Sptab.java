@@ -1,6 +1,8 @@
 package cn.zkingsoft.pojo;
 
-public class Sptab {
+import java.io.Serializable;
+
+public class Sptab implements Serializable{
 	private String pid;
 	private String pname;
 	private Double price;
