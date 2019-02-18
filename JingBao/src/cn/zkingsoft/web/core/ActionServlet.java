@@ -27,7 +27,7 @@ public class ActionServlet extends HttpServlet{
 		Properties actionpool=(Properties)this.getServletContext().getAttribute("actionpool");
 		//得到页面提交的路径
 		String uri=req.getRequestURI();
-		//System.out.println(uri);//======/zking_java_web_20/calc.do
+		System.out.println(uri);//======/zking_java_web_20/calc.do
 		//获得最后一个斜杆和点进行截取
 		int a=uri.lastIndexOf("/");
 		int b=uri.lastIndexOf(".");

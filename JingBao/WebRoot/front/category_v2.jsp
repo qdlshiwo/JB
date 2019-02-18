@@ -519,7 +519,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</div>
 							</div>
                         </div>
-                        
+
+  	<%
+  		SptabService ss = new SptabServiceImpl();
+  		String size = request.getParameter("pageSize");
+  		int pageSize = 3;
+  		if(size!=null){
+  			pageSize = Integer.parseInt(size);
+  		}
+  		int maxPage = ss.getMaxPageNo(pageSize);
+  		int pageNo  = 1;
+  		String no = request.getParameter("pageNo");
+  		if(no!=null){
+  			pageNo = Integer.parseInt(no);
+  			if(pageNo < 1){
+  				pageNo=1;
+  			}
+  			if(pageNo > maxPage){
+  				pageNo=maxPage;
+  			}
+  		}
+  		List<Sptab> listpage  = ss.selectSptabsSplit(pageSize, pageNo);
+  		pageContext.setAttribute("listpage",listpage);
+  		pageContext.setAttribute("pageNo",pageNo);
+  		pageContext.setAttribute("maxPage",maxPage);
+  		pageContext.setAttribute("pageSize",pageSize);
+  	 %>                        
                         <div class="col-lg-6 col-md-6 col-sm-6">
                         	<div class="category-results">
                             	<p>Results 1-6 of 6</p>
@@ -527,8 +552,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <select class="chosen-select">
                                 	<option>1</option>
                                    	<option>2</option>
-                                    <option>6</option>
-                                    <option>P10</option> 
+                                    <option>3</option>
+                                    <option>4</option> 
+                                    <option>5</option> 
+                                    <option>6</option> 
                                 </select>
                                 per page
                                 </p>

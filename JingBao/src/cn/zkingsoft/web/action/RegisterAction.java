@@ -20,15 +20,6 @@ public class RegisterAction extends DispatcherAction{
 	
 	public ActionForward zhuce(HttpServletRequest req, HttpServletResponse resp, ActionForm form)
 			throws ServletException, IOException {
-		RegisterForm uf = (RegisterForm)form;
-		if("lxp".equals(uf.getUname())&&"123".equals(uf.getUpass())){
-			//----------------
-			//这里留着查询service层的数据
-			//----------------
-			req.getSession().setAttribute("user", uf);
-			return new ActionForward(true,"main");
-		}else{
-			return new ActionForward(true,"login");
-		}
+			return new ActionForward(true,"loginandregisterhtml");
 	}
 }

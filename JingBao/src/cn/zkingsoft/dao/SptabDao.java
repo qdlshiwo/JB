@@ -1,6 +1,7 @@
 package cn.zkingsoft.dao;
 
 import cn.zkingsoft.pojo.Sptab;
+
 import java.sql.Connection;
 import java.util.List;
 import java.util.Map;
@@ -20,4 +21,8 @@ public interface SptabDao {
 	public List<Sptab> selectAllSptabByCondition(Connection conn, Map<String, String> condition) throws Exception;
 	
 	public Sptab selectSptabByPname(String pname, Connection conn) throws Exception;
+	
+	public List<Sptab> splitQuery(int pageSize,int pageNo ,Connection conn) throws Exception;
+
+	public int getMaxPageNo(int pageSize,Connection conn) throws Exception;
 }
