@@ -1,10 +1,15 @@
 package cn.zkingsoft.web.form;
+
+import java.io.Serializable;
+
+import cn.zkingsoft.web.core.ActionForm;
+
 /**
  * ÕâÊÇ×¢²áµÄform
  * @author Lxp
  *
  */
-public class RegisterForm {
+public class RegisterForm extends ActionForm implements Serializable{
 	private String email;
 	private String telphone;
 	private String uname;
