@@ -574,7 +574,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <div class="col-lg-8 col-md-8 col-sm-8 product-content no-padding">
                                 	<div class="product-info">
                                         <h5><a href="products_page_v1.html"><%=s.getPname() %></a></h5>
-                                        <span class="price"><%=s.getPrice() %></span>
+                                        <span class="price"><%=s.getPrice() %></span> 
 										<div class="rating-box">
 											<div class="rating readonly-rating" data-score="4"></div>
 											<span>3 Review(s)</span>
