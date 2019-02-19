@@ -37,8 +37,18 @@ public class DingdanDaoImpl implements DingdanDao{
 
 	@Override
 	public boolean deleteDingdan(Dingdan dingdan, Connection conn) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
+		boolean flag = false;
+		String sql = "delete from web_dingdan where did=?";
+		PreparedStatement ps = null;
+		ps = conn.prepareStatement(sql);
+		ps.setString(1, dingdan.getDid());
+		int n = ps.executeUpdate();
+		if (n > 0) {
+			flag = true;
+		}
+		ps.close();
+		System.out.println("É¾³ý¶©µ¥");
+		return flag;
 	}
 
 	@Override
