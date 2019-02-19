@@ -62,21 +62,46 @@ public class DingdanDaoImpl implements DingdanDao{
 	@Override
 	public List<Dingdan> selectAllDingdanByCondition(String did, Connection conn) throws Exception {
 		List<Dingdan> list = new ArrayList<Dingdan>();
-		String sql = "select * from web_dingdan where did = ?";
+		String sql = "select * from web_dingdan where uid = ?";
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ps = conn.prepareStatement(sql);
+		ps.setString(1, did);
+		rs = ps.executeQuery();
+		while (rs.next()) {
+			Dingdan dingdan = new Dingdan();
+			dingdan.setDid(rs.getString("did"));
+			dingdan.setUid(rs.getString("uid"));
+			dingdan.setPid(rs.getString("pid"));
+			dingdan.setDnum(rs.getInt("dnum"));
+			dingdan.setDno(rs.getInt("dno"));
+			dingdan.setAddress(rs.getString("address"));
+			dingdan.setDiscount(rs.getDouble("discount"));
+			list.add(dingdan);
+		}
+		rs.close();
+		ps.close();
+		return list;
+	}
+
+	@Override
+	public List<Dingdan> selectAllDingdanByCondition(Connection conn) throws Exception {
+		System.out.println("456");
+		List<Dingdan> list = new ArrayList<Dingdan>();
+		String sql = "select * from web_dingdan";
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ps = conn.prepareStatement(sql);
 		rs = ps.executeQuery();
 		while (rs.next()) {
 			Dingdan dingdan = new Dingdan();
-			ps = conn.prepareStatement(sql);
-			ps.setString(1, dingdan.getDid());
-			ps.setString(2, dingdan.getUid());
-			ps.setString(3, dingdan.getPid());
-			ps.setInt(4, dingdan.getDnum());
-			ps.setInt(5, dingdan.getDno());
-			ps.setString(6, dingdan.getAddress());
-			ps.setDouble(7, dingdan.getDiscount());
+			dingdan.setDid(rs.getString("did"));
+			dingdan.setUid(rs.getString("uid"));
+			dingdan.setPid(rs.getString("pid"));
+			dingdan.setDnum(rs.getInt("dnum"));
+			dingdan.setDno(rs.getInt("dno"));
+			dingdan.setAddress(rs.getString("address"));
+			dingdan.setDiscount(rs.getDouble("discount"));
 			list.add(dingdan);
 		}
 		rs.close();

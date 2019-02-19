@@ -68,4 +68,25 @@ public class DingdanServiceImpl implements DingdanService{
 		return list;
 	}
 
+	@Override
+	public List<Dingdan> selectAllDingdanByCondition() {
+		System.out.println("123");
+		Connection conn = DBHelper.getConnection();
+		List<Dingdan> list = null;
+		try {
+			conn.setAutoCommit(false);
+			list = ding.selectAllDingdanByCondition(conn);
+			conn.commit();
+		} catch (Exception e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}finally{
+			DBHelper.closeConnection(conn);
+		}
+		return list;
+	}
+
 }
