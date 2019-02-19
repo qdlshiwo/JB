@@ -15,8 +15,4 @@ public class Helper {
 		return new String(str);
 		
 	}
-	public static void main(String[] args) {
-		String s = PrimaryKeyComplete();
-		
-	}
 }
