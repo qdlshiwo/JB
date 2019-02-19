@@ -524,7 +524,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 				<section class="main-content col-lg-9 col-md-9 col-sm-9">
 
-                  <from action="" method="post">
+                  <from id="loginform">
 					<div class="row">
 
 						<div class="col-lg-12 col-md-12 col-sm-12">
@@ -555,7 +555,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<br/><br/>
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-6 align-left">
-										<input type="button" class="orange" value="Login" onclick="jump('denglu')">
+										<input type="button" class="orange" value="Login" onclick="loginjump('denglu')">
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-6 align-right">
 										<small>
@@ -573,7 +573,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				</from>
 
-                    <form action="register.do" method="post">
+                    <form id="regform">
 					<div class="row">
 
 						<div class="col-lg-12 col-md-12 col-sm-12 register-account">
@@ -604,7 +604,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Telephone</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="text" name="telephone">
+										<input type="text" name="telphone">
 									</div>
 
 								</div>
@@ -615,7 +615,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Username*</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="text" name="username">
+										<input type="text" name="uname">
 									</div>
 
 								</div>
@@ -639,7 +639,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Password</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="password" name="password">
+										<input type="password" name="upass">
 									</div>
 
 								</div>
@@ -650,7 +650,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Confirm Password</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="password" name="confirmpassword">
+										<input type="password" name="reupass">
 									</div>
 
 								</div>
@@ -661,7 +661,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Introduce</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<textarea name="introduce" placeholder="please input your introduce"></textarea>
+										<textarea name="info" placeholder="please input your introduce"></textarea>
 									</div>
 
 								</div>
@@ -836,7 +836,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</div>
 
 									<div class="col-lg-12 col-md-12 col-sm-12">
-										<input class="big" type="button" value="Register" onclick="jump('zhuce')">
+										<input class="big" type="button" value="Register" onclick="regjump('zhuce')">
 										<input class="big" type="reset" value="Cancel">
 									</div>
 
@@ -1255,6 +1255,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!-- Container -->
 
 		<!-- JavaScript -->
+		<script type="text/javascript">
+			function loginjump(val){
+				var form = document.getElementById("loginform");
+				form.action="login.do?param="+val;
+			    form.method="post";
+			    form.submit();
+			}
+			function regjump(val){
+				var form = document.getElementById("regform");
+				form.action="register.do?param="+val;
+			    form.method="post";
+			    form.submit();
+			}
+		</script>
 		<script src="js/modernizr.min.js"></script>
 		<script src="js/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>

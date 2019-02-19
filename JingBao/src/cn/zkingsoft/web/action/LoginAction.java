@@ -27,12 +27,12 @@ public class LoginAction extends DispatcherAction {
 		LoginForm uf = (LoginForm) form;
 		UserService us = new UserServiceImpl();
 		try {
-			User user = us.selectUsersById(uf.getUname());
+			User user = us.selectUserByUsername(uf.getUname());
 			if (user != null) {
 				if (user.getPassword().equals(uf.getUpass())) {
 					System.out.println("登录成功！");
 					req.getSession().setAttribute("loginmsg", "登录成功！");
-					req.getSession().setAttribute("user", uf);
+					req.getSession().setAttribute("user", uf);//存用户登录的信息，可以在主页上显示用户名
 					return new ActionForward(true, "show");
 				} else {
 					System.out.println("密码错误！");
