@@ -11,6 +11,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.zkingsoft.pojo.User;
+
 public class DefFilter implements Filter{
 
 	@Override
@@ -23,16 +25,20 @@ public class DefFilter implements Filter{
 			throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest)arg0;
 		HttpServletResponse response = (HttpServletResponse)arg1;
-		Object obj = request.getSession().getAttribute("uname");
+		Object obj = request.getSession().getAttribute("user");
 		System.out.println("def---doFilter");
 		if(obj!=null){
-			//放行	
-			arg2.doFilter(request, response);
+			//放行
+			request.getSession().setAttribute("loginstate",1);
+			User user =(User)request.getSession().getAttribute("user");
+			request.getSession().setAttribute("loginmsg","Welcome，"+user.getUsername());
 		}else{
+			request.getSession().setAttribute("loginmsg","Login");
+			request.getSession().setAttribute("loginstate",0);
 			System.out.println(request.getContextPath());
-			response.sendRedirect("../index.jsp");
 //			response.sendRedirect("/"+request.getContextPath()+"/index.jsp");
 		}
+		arg2.doFilter(request, response);
 	}
 
 	@Override

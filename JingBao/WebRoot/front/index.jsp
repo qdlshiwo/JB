@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -67,38 +68,67 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 							<nav class="col-lg-5 col-md-5 col-sm-5">
 								<ul class="pull-right">
-									<li class="purple"><a href="#"><i class="icons icon-user-3"></i> Login</a>
+									<li class="purple"><a href="#"><i class="icons icon-user-3"></i>${loginmsg}</a>
 										<ul id="login-dropdown" class="box-dropdown">
 											<li>
                                             	<div class="box-wrapper">
-                                                    <h4>LOGIN</h4>
-                                                    <div class="iconic-input">
-                                                        <input type="text" placeholder="Username">
-                                                        <i class="icons icon-user-3"></i>
-                                                    </div>
-                                                    <div class="iconic-input">
-                                                        <input type="text" placeholder="Password">
-                                                        <i class="icons icon-lock"></i>
-                                                    </div>
-                                                    <input type="checkbox" id="loginremember"> <label for="loginremember">Remember me</label>
-                                                    <br>
-                                                    <br>
-                                                    <div class="pull-left">
-                                                        <input type="submit" class="orange" value="Login">
-                                                    </div>
-                                                    <div class="pull-right">
-                                                        <a href="#">Forgot your password?</a>
-                                                        <br>
-                                                        <a href="#">Forgot your username?</a>
-														<br>
-                                                    </div>
-                                                    <br class="clearfix">
-                                                </div>
-												<div class="footer">
-													<h4 class="pull-left">NEW CUSTOMER?</h4>
-													<a class="button pull-right" href="create_an_account.html">Create an account</a>
-												</div>
-											</li>
+												<c:if test=" ${loginstate eq 0 }">
+													<h4>Login</h4>
+													<div class="iconic-input">
+														<input type="text" placeholder="Username" name="username" /> <i
+															class="icons icon-user-3"></i>
+													</div>
+													<div class="iconic-input">
+														<input type="text" placeholder="Password" name="password" /> <i
+															class="icons icon-lock"></i>
+													</div>
+													<input type="checkbox" id="loginremember">
+													<label for="loginremember">Remember me</label>
+													<br>
+													<br>
+													<div class="pull-left">
+														<input type="button" class="orange" value="Login" onclick="jump('denglu')" />
+													</div>
+													<div class="pull-right">
+														<a href="#">Forgot your password?</a> <br> <a
+															href="#">Forgot your username?</a> <br>
+													</div>
+													<br class="clearfix">
+													<div class="footer">
+														<h4 class="pull-left">NEW CUSTOMER?</h4>
+														<a class="button pull-right" href="create_an_account.html">Create
+														an account</a>
+													</div>
+												</c:if>
+												<c:if test=" ${loginstate eq 1 }">
+													<h4>${loginmsg}</h4>
+													<div class="iconic-input">
+														loginusername <i
+															class="icons icon-user-3"></i>
+													</div>
+													<div class="iconic-input">
+														loginpassword <i
+															class="icons icon-lock"></i>
+													</div>
+													<input type="checkbox" id="loginremember">
+													<label for="loginremember">Remember me</label>
+													<br>
+													<br>
+													<div class="pull-left">
+														<input type="submit" class="orange" value="Login">
+													</div>
+													<div class="pull-right">
+														<a href="#">Forgot your password?</a> <br> <a
+															href="#">Forgot your username?</a> <br>
+													</div>
+													<br class="clearfix">
+													<div class="footer">
+														<h4 class="pull-left">NEW CUSTOMER?</h4>
+														<a class="button pull-right" href="create_an_account.html">Create
+														an account</a>
+													</div>
+												</c:if></div>
+										</li>
 										</ul>
 									</li>
 									<li><a href="#"><i class="icons icon-lock"></i> Create an Account</a></li>
