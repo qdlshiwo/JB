@@ -24,12 +24,14 @@ public class LoginAction extends DispatcherAction {
 
 	public ActionForward denglu(HttpServletRequest req, HttpServletResponse resp, ActionForm form)
 			throws ServletException, IOException {
+		System.out.println("登录");
 		LoginForm uf = (LoginForm) form;
 		UserService us = new UserServiceImpl();
 		try {
-			User user = us.selectUserByUsername(uf.getUname());
+			System.out.println(uf.getUsername());
+			User user = us.selectUserByUsername(uf.getUsername());
 			if (user != null) {
-				if (user.getPassword().equals(uf.getUpass())) {
+				if (user.getPassword().equals(uf.getPassword())) {
 					System.out.println("登录成功！");
 					req.getSession().setAttribute("loginmsg", "登录成功！");
 					req.getSession().setAttribute("user", uf);//存用户登录的信息，可以在主页上显示用户名

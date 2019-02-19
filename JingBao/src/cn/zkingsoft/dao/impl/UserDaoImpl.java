@@ -100,10 +100,10 @@ public class UserDaoImpl implements UserDao {
 			user.setEmail(rs.getString("email"));
 			user.setTelephone(rs.getString("telephone"));
 			user.setIntroduce(rs.getString("introduce"));
-			user.setActivecode(rs.getString("activeCode"));
+			user.setActivecode(rs.getString("activecode"));
 			user.setState(rs.getInt("state"));
 			user.setRole(rs.getString("role"));
-			user.setRegistime(rs.getString("regisTime"));
+			user.setRegistime(rs.getString("registime"));
 
 		}
 		rs.close();
@@ -127,10 +127,10 @@ public class UserDaoImpl implements UserDao {
 			user.setEmail(rs.getString("email"));
 			user.setTelephone(rs.getString("telephone"));
 			user.setIntroduce(rs.getString("introduce"));
-			user.setActivecode(rs.getString("activeCode"));
+			user.setActivecode(rs.getString("activecode"));
 			user.setState(rs.getInt("state"));
 			user.setRole(rs.getString("role"));
-			user.setRegistime(rs.getString("regisTime"));
+			user.setRegistime(rs.getString("registime"));
 			list.add(user);
 		}
 		rs.close();
@@ -153,10 +153,10 @@ public class UserDaoImpl implements UserDao {
 			user.setEmail(rs.getString("email"));
 			user.setTelephone(rs.getString("telephone"));
 			user.setIntroduce(rs.getString("introduce"));
-			user.setActivecode(rs.getString("activeCode"));
+			user.setActivecode(rs.getString("activecode"));
 			user.setState(rs.getInt("state"));
 			user.setRole(rs.getString("role"));
-			user.setRegistime(rs.getString("regisTime"));
+			user.setRegistime(rs.getString("registime"));
 			list.add(user);
 		}
 		rs.close();
@@ -220,10 +220,10 @@ public class UserDaoImpl implements UserDao {
 			user.setEmail(rs.getString("email"));
 			user.setTelephone(rs.getString("telephone"));
 			user.setIntroduce(rs.getString("introduce"));
-			user.setActivecode(rs.getString("activeCode"));
+			user.setActivecode(rs.getString("activecode"));
 			user.setState(rs.getInt("state"));
 			user.setRole(rs.getString("role"));
-			user.setRegistime(rs.getString("regisTime"));
+			user.setRegistime(rs.getString("registime"));
 			list.add(user);
 		}
 		rs.close();
@@ -235,10 +235,14 @@ public class UserDaoImpl implements UserDao {
 	public User selectUserByUsername(String username, Connection conn) throws Exception {
 		User user = null;
 		String sql = "select * from web_users where username=?";
-		PreparedStatement ps = conn.prepareStatement(sql);
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		ps = conn.prepareStatement(sql);
 		ps.setString(1, username);
-		ResultSet rs = ps.executeQuery();
+		rs = ps.executeQuery();
 		if (rs.next()) {
+			System.out.println("true");
 			user = new User();
 			user.setId(rs.getString("id"));
 			user.setUsername(rs.getString("username"));
@@ -247,10 +251,11 @@ public class UserDaoImpl implements UserDao {
 			user.setEmail(rs.getString("email"));
 			user.setTelephone(rs.getString("telephone"));
 			user.setIntroduce(rs.getString("introduce"));
-			user.setActivecode(rs.getString("activeCode"));
+			user.setActivecode(rs.getString("activecode"));
 			user.setState(rs.getInt("state"));
 			user.setRole(rs.getString("role"));
-			user.setRegistime(rs.getString("regisTime"));
+			user.setRegistime(rs.getString("registime"));
+
 		}
 		rs.close();
 		ps.close();
