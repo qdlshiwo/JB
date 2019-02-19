@@ -14,7 +14,7 @@ import cn.zkingsoft.db.DBHelper;
 import cn.zkingsoft.pojo.User;
 import cn.zkingsoft.service.UserService;
 
-public class UserServiceImpl implements UserService {
+  public class UserServiceImpl implements UserService {
 	private UserDao udi = new UserDaoImpl();
 
 	@Override

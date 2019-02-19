@@ -23,7 +23,7 @@ public class ActionServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//将配置文件从应用程序中取出
 		Properties config=(Properties)this.getServletContext().getAttribute("config");
-		//将action实例池拿出来   用类名作为键，对应的实例作为值  
+		//将action实例池拿出来   用类名作为键，对应的实例作为值   
 		Properties actionpool=(Properties)this.getServletContext().getAttribute("actionpool");
 		//得到页面提交的路径
 		String uri=req.getRequestURI();
