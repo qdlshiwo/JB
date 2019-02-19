@@ -9,12 +9,12 @@ public class Dingdan implements Serializable{
 	private Integer dnum;
 	private Integer dno;
 	private String address;
-	private String discount;
+	private Double discount;
 	public Dingdan() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Dingdan(String did, String uid, String pid, Integer dnum, Integer dno, String address, String discount) {
+	public Dingdan(String did, String uid, String pid, Integer dnum, Integer dno, String address, Double discount) {
 		super();
 		this.did = did;
 		this.uid = uid;
@@ -60,10 +60,10 @@ public class Dingdan implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getDiscount() {
+	public Double getDiscount() {
 		return discount;
 	}
-	public void setDiscount(String discount) {
+	public void setDiscount(Double discount) {
 		this.discount = discount;
 	}
 	
