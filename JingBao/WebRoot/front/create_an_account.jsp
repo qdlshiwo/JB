@@ -524,7 +524,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 				<section class="main-content col-lg-9 col-md-9 col-sm-9">
 
-                  <from id="loginform">
+                  <form id="loginform">
 					<div class="row">
 
 						<div class="col-lg-12 col-md-12 col-sm-12">
@@ -538,14 +538,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-6">
 										<div class="iconic-input">
-											<input type="text" placeholder="username">
+											<input type="text" placeholder="username" name="username">
 											<i class="icons icon-user-3"></i>
 										</div>
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-6">
 										<div class="iconic-input">
-											<input type="text" placeholder="password">
+											<input type="text" placeholder="password" name="password">
 											<i class="icons icon-lock"></i>
 										</div>
 									</div>
@@ -571,7 +571,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 
 					</div>
-				</from>
+				</form>
 
                     <form id="regform">
 					<div class="row">

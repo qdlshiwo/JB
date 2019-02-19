@@ -48,7 +48,7 @@ public class RegisterAction extends DispatcherAction {
 			return new ActionForward(true, "loginandregisterhtml");
 		}else{
 			System.out.println("×¢²áÊ§°Ü£¡");
-			return new ActionForward(true, "loginandregisterhtml");
+			return new ActionForward(true, "error");
 		}
 	}
 }
