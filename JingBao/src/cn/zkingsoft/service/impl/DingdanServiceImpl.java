@@ -17,6 +17,7 @@ public class DingdanServiceImpl implements DingdanService{
 	
 	@Override
 	public boolean addDingdan(Dingdan dingdan) {
+		System.out.println("234");
 		Connection conn = DBHelper.getConnection();
 		boolean flag = false;
 		try {

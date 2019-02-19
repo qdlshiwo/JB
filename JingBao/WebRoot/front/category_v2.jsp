@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <script type="text/javascript">
 			function choiceSpt(id){
 				if(confirm("您真的确认添加吗？"+id)){
-					location.href="order_info.jsp?pid="+id; 
+					location.href="addDingdan.jsp?pid="+id; 
 				}
 			}
 			function jump(){

@@ -6,17 +6,19 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.jdt.internal.compiler.batch.Main;
+
 import cn.zkingsoft.dao.DingdanDao;
+import cn.zkingsoft.db.DBHelper;
 import cn.zkingsoft.pojo.Dingdan;
+import cn.zkingsoft.util.Helper;
 
 public class DingdanDaoImpl implements DingdanDao{
 
 	@Override
 	public boolean addDingdan(Dingdan dingdan, Connection conn) throws Exception {
 		boolean flag = false;
-		String sql = "insert into web_dingdan"
-				+ "(did,uid,pid,dnum,dno,address,discount) "
-				+ "values(?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into web_dingdan values(?,?,?,?,?,?,?)";
 		PreparedStatement ps = null;
 		ps = conn.prepareStatement(sql);
 		ps.setString(1, dingdan.getDid());
@@ -81,5 +83,5 @@ public class DingdanDaoImpl implements DingdanDao{
 		ps.close();
 		return list;
 	}
-
+	
 }
