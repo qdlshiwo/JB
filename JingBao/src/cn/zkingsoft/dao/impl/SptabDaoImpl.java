@@ -13,7 +13,7 @@ import cn.zkingsoft.dao.SptabDao;
 import cn.zkingsoft.pojo.Sptab;
 
 public class SptabDaoImpl implements SptabDao{
-	/**
+	/** 
 	 * 增加商品
 	 */
 	@Override
@@ -38,6 +38,7 @@ public class SptabDaoImpl implements SptabDao{
 		ps.setString(12, sptab.getYingpan());
 		ps.setInt(13, sptab.getKucun());
 		ps.setInt(14, sptab.getPstate());
+		
 		ps.setString(15, sptab.getPinglun());
 		int n = ps.executeUpdate();
 		if (n > 0) {
