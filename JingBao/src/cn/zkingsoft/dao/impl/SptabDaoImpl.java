@@ -272,7 +272,7 @@ public class SptabDaoImpl implements SptabDao{
 	public List<Sptab> splitQuery(int pageSize, int pageNo, Connection conn) throws Exception {
 		// TODO Auto-generated method stub
 		List<Sptab>list = new ArrayList<Sptab>();
-		String sql = "select * from Spatb limit ?,?";
+		String sql = "select * from web_sptab limit ?,?";
 		Sptab sp = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -309,7 +309,7 @@ public class SptabDaoImpl implements SptabDao{
 	@Override
 	public int getMaxPageNo(int pageSize, Connection conn) throws Exception{
 		int count = 0;
-		String sql = "select count(*) from Sptab";
+		String sql = "select count(*) from web_sptab";
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ps = conn.prepareStatement(sql);

@@ -37,11 +37,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<link rel="stylesheet" href="css/fontello-ie7.css">
 		<![endif]-->
         <script type="text/javascript">
-			function choiceSpt(id){
-				if(confirm("您真的确认添加该件商品吗？"+id)){
-					location.href="order_info.jsp?pid="+id;
+			function choiceSpt(name){
+				if(confirm("您真的确认添加"+name+"吗？")){
+					location.href="";
 				}
 			}
+			function jump(){
+			var ps = document.getElementById("ps").value;
+			var pn = document.getElementById("pn").value;
+			if(ps==""){
+				ps = 3;
+			}
+			if(pn==""){
+				pn = 1;
+			}
+			location.href="category_v2.jsp?pageSize="+ps+"&pageNo="+pn;
+		}
 		</script>
     </head>
     
@@ -539,7 +550,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				pageNo=maxPage;
   			}
   		}
+  		
   		List<Sptab> listpage  = ss.selectSptabsSplit(pageSize, pageNo);
+  		System.out.println(listpage);
   		pageContext.setAttribute("listpage",listpage);
   		pageContext.setAttribute("pageNo",pageNo);
   		pageContext.setAttribute("maxPage",maxPage);
@@ -547,53 +560,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	 %>                        
                         <div class="col-lg-6 col-md-6 col-sm-6">
                         	<div class="category-results">
-                            	<p>Results 1-6 of 6</p>
-                                <p>Show 
-                                <select class="chosen-select">
-                                	<option>1</option>
-                                   	<option>2</option>
-                                    <option>3</option>
-                                    <option>4</option> 
-                                    <option>5</option> 
-                                    <option>6</option> 
-                                </select>
+                            	<p>Results 1-<%=maxPage-1 %> of <input type="text" id="ps" value="${pageSize }"/></p>
+                                <p>Show
+                                <input type="text" id="pn" value="${pageNo }"/>
                                 per page
+                                <button onclick="jump()">go</button>
                                 </p>
                             </div>
                         </div>
                         
                         <div class="col-lg-6 col-md-6 col-sm-6">
                         	<div class="pagination">
-                            	<a href="#"><div class="previous"><i class="icons icon-left-dir"></i></div></a>
-                                <a href="#"><div class="page-button">1</div></a>
-                                <a href="#"><div class="page-button">2</div></a>
-                                <a href="#"><div class="page-button">3</div></a>
-                                <a href="#"><div class="next"><i class="icons icon-right-dir"></i></div></a>
+                            	<a href="category_v2.jsp?pageNo=${pageNo-1}&pageSize=${pageSize }"><div class="previous"><i class="icons icon-left-dir"></i></div></a>
+                                <a href="category_v2.jsp?pageNo=1&pageSize=${pageSize }"><div class="page-button">first</div></a>
+                                <a href="category_v2.jsp?pageNo=${maxPage }&pageSize=${pageSize }"><div class="page-button">last</div></a>
+                                <a href="category_v2.jsp?pageNo=${pageNo+1}&pageSize=${pageSize }"><div class="next"><i class="icons icon-right-dir"></i></div></a>
+<!--                            		<button onclick="jump()">跳转</button> -->
                             </div>
                         </div>
                         
                    </div>
-                   <%
-                           	SptabService spt=new SptabServiceImpl();
+                   
+                  
+                     <%
+                            /* 	SptabService spt=new SptabServiceImpl();
                            	Map map = (Map)request.getAttribute("map");
                            	List<Sptab> list=null;
                            	if(map==null){
 			  				list = spt.selectSptabsByCondition();
 				  			}else{
 				  				list = spt.selectSptabsByCondition(map);
-				  			}
-                   %>
-                   <%
-                   			for(int i=0;i<list.size();i++){
-    						Sptab s = list.get(i);
-                    %>
-                    
+				  			} */
+                   			for(int i=0;i<listpage.size();i++){
+    						Sptab s = listpage.get(i);
+    						
+                    %> 
                    <div class="row"> 
                         <!-- Product Item -->
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="grid-view product">
                                 <div class="product-image col-lg-4 col-md-4 col-sm-4">
-                                    <img src="<%=s.getImgurl() %>" alt="Product1">
+                                    <img src="<%=s.getImgurl()%>" alt="Product1">
                                     <a href="products_page_v1.html" class="product-hover">
 														<i class="icons icon-eye-1"></i> Quick View
 													</a>
@@ -608,6 +615,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<span>3 Review(s)</span>
 										</div>
                                         <p><%=s.getDescription() %> </p>		
+                                        <p><%=s.getCpu() %> </p>		
+                                        <p><%=s.getGpu() %> </p>		
+                                        <p><%=s.getNeicun() %> </p>		
+                                        <p><%=s.getYingpan() %> </p>		
 									</div>
 
 
@@ -634,36 +645,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             	</div>
                             </div>
                         </div>
-                        <%
+                         <%
                         	}
                          %>
                         <!-- Product Item -->
                         
-                        
                        
                         
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="category-results">
-                                <p>Results 1-6 of 6</p>
-                                <p>Show 
-                                <select class="chosen-select">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>6</option>
-                                    <option>P10</option> 
-                                </select>
+                        	<div class="category-results">
+                            	<p>Results 1-<%=maxPage-1 %> of <input type="text" id="ps" value="${pageSize }"/></p>
+                                <p>Show
+                                <input type="text" id="pn" value="${pageNo }"/>
                                 per page
+                                <button onclick="jump()">go</button>
                                 </p>
                             </div>
                         </div>
                         
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="pagination">
-                                <a href="#"><div class="previous"><i class="icons icon-left-dir"></i></div></a>
-                                <a href="#"><div class="page-button">1</div></a>
-                                <a href="#"><div class="page-button">2</div></a>
-                                <a href="#"><div class="page-button">3</div></a>
-                                <a href="#"><div class="next"><i class="icons icon-right-dir"></i></div></a>
+                        	<div class="pagination">
+                            	<a href="category_v2.jsp?pageNo=${pageNo-1}&pageSize=${pageSize }"><div class="previous"><i class="icons icon-left-dir"></i></div></a>
+                                <a href="category_v2.jsp?pageNo=1&pageSize=${pageSize }"><div class="page-button">first</div></a>
+                                <a href="category_v2.jsp?pageNo=${maxPage }&pageSize=${pageSize }"><div class="page-button">last</div></a>
+                                <a href="category_v2.jsp?pageNo=${pageNo+1}&pageSize=${pageSize }"><div class="next"><i class="icons icon-right-dir"></i></div></a>
+<!--                            		<button onclick="jump()">跳转</button> -->
                             </div>
                         </div>
                         
