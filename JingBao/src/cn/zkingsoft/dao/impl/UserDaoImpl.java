@@ -255,7 +255,7 @@ public class UserDaoImpl implements UserDao {
 			user.setState(rs.getInt("state"));
 			user.setRole(rs.getString("role"));
 			user.setRegistime(rs.getString("registime"));
-
+			System.out.println(user);
 		}
 		rs.close();
 		ps.close();

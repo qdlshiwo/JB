@@ -545,7 +545,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 									<div class="col-lg-6 col-md-6 col-sm-6">
 										<div class="iconic-input">
-											<input type="text" placeholder="password" name="password">
+											<input type="password" placeholder="password" name="password">
 											<i class="icons icon-lock"></i>
 										</div>
 									</div>

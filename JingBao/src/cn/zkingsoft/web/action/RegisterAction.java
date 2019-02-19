@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import cn.zkingsoft.pojo.User;
 import cn.zkingsoft.service.UserService;
 import cn.zkingsoft.service.impl.UserServiceImpl;
+import cn.zkingsoft.util.Helper;
 import cn.zkingsoft.web.core.ActionForm;
 import cn.zkingsoft.web.core.ActionForward;
 import cn.zkingsoft.web.core.DispatcherAction;
@@ -27,7 +28,7 @@ public class RegisterAction extends DispatcherAction {
 		RegisterForm rf = (RegisterForm) form;
 		UserService us = new UserServiceImpl();
 		User user = new User();
-		user.setId("主键id1");
+		user.setId(Helper.PrimaryKeyComplete());
 		user.setUsername(rf.getUsername());
 		user.setPassword(rf.getPassword());
 		System.out.println(rf.getSex());
@@ -37,12 +38,12 @@ public class RegisterAction extends DispatcherAction {
 		user.setIntroduce(rf.getIntroduce());
 		user.setActivecode("123");
 		user.setState(0);
-		user.setRole("权限1");
-		user.setRegistime("当前时间1");
-		System.out.println(rf.getParam());
-		System.out.println(user.toString());
+		user.setRole("0");
+		user.setRegistime("2019/2/20");
+//		System.out.println(rf.getParam());
+//		System.out.println(user.toString());
 		boolean flag = us.addUsers(user);
-		System.out.println(flag);
+//		System.out.println(flag);
 		if(flag){
 			//req.getSession().setAttribute("user", uf);
 			return new ActionForward(true, "loginandregisterhtml");

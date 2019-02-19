@@ -28,6 +28,7 @@ public class DefFilter implements Filter{
 		Object obj = request.getSession().getAttribute("user");
 		System.out.println("def---doFilter");
 		if(obj!=null){
+			System.out.println("1");
 			//·ÅÐÐ
 			request.getSession().setAttribute("loginstate",1);
 			User user =(User)request.getSession().getAttribute("user");
