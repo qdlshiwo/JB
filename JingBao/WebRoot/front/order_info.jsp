@@ -678,7 +678,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<td><%=d.getDnum() %></td>
 												<td><%=d.getDiscount() %></td>
 												<td><%=s.getPrice()-d.getDiscount() %></td>
-												<td>$190.00</td>
+												<td><a href="javascript:deleteUsers('<%=d.getDid() %>')">删除</a></td>
 											</tr>
 											<%	
 						    					}
