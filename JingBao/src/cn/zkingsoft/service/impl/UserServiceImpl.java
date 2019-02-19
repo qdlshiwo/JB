@@ -20,6 +20,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean addUsers(User users) {
+		System.out.println("service");
 		boolean f = false;
 		Connection conn = DBHelper.getConnection();
 		try {

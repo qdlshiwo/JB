@@ -538,14 +538,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-6">
 										<div class="iconic-input">
-											<input type="text" placeholder="Username">
+											<input type="text" placeholder="username">
 											<i class="icons icon-user-3"></i>
 										</div>
 									</div>
 
 									<div class="col-lg-6 col-md-6 col-sm-6">
 										<div class="iconic-input">
-											<input type="text" placeholder="Password">
+											<input type="text" placeholder="password">
 											<i class="icons icon-lock"></i>
 										</div>
 									</div>
@@ -604,7 +604,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Telephone</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="text" name="telphone">
+										<input type="text" name="telephone">
 									</div>
 
 								</div>
@@ -615,7 +615,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Username*</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="text" name="uname">
+										<input type="text" name="username">
 									</div>
 
 								</div>
@@ -639,7 +639,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Password</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="password" name="upass">
+										<input type="password" name="password">
 									</div>
 
 								</div>
@@ -650,7 +650,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Confirm Password</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<input type="password" name="reupass">
+										<input type="password" name="confirmpassword">
 									</div>
 
 								</div>
@@ -661,7 +661,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<p>Introduce</p>
 									</div>
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<textarea name="info" placeholder="please input your introduce"></textarea>
+										<textarea name="introduce" placeholder="please input your introduce"></textarea>
 									</div>
 
 								</div>

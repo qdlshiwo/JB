@@ -11,24 +11,23 @@ import cn.zkingsoft.web.core.ActionForm;
  */
 public class RegisterForm extends ActionForm implements Serializable{
 	private String email;
-	private String telphone;
-	private String uname;
+	private String telephone;
+	private String username;
 	private String sex;
-	private String upass;
-	private String reupass;
-	private String info;
+	private String password;
+	private String confirmpassword;
+	private String introduce;
 	public RegisterForm() {
 	}
-	public RegisterForm(String email, String telphone, String uname, String sex, String upass, String reupass,
-			String info) {
-		super();
+	public RegisterForm(String email, String telephone, String username, String sex, String password,
+			String confirmpassword, String introduce) {
 		this.email = email;
-		this.telphone = telphone;
-		this.uname = uname;
+		this.telephone = telephone;
+		this.username = username;
 		this.sex = sex;
-		this.upass = upass;
-		this.reupass = reupass;
-		this.info = info;
+		this.password = password;
+		this.confirmpassword = confirmpassword;
+		this.introduce = introduce;
 	}
 	public String getEmail() {
 		return email;
@@ -36,17 +35,17 @@ public class RegisterForm extends ActionForm implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getTelphone() {
-		return telphone;
+	public String getTelephone() {
+		return telephone;
 	}
-	public void setTelphone(String telphone) {
-		this.telphone = telphone;
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
-	public String getUname() {
-		return uname;
+	public String getUsername() {
+		return username;
 	}
-	public void setUname(String uname) {
-		this.uname = uname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getSex() {
 		return sex;
@@ -54,23 +53,23 @@ public class RegisterForm extends ActionForm implements Serializable{
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public String getUpass() {
-		return upass;
+	public String getPassword() {
+		return password;
 	}
-	public void setUpass(String upass) {
-		this.upass = upass;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getReupass() {
-		return reupass;
+	public String getConfirmpassword() {
+		return confirmpassword;
 	}
-	public void setReupass(String reupass) {
-		this.reupass = reupass;
+	public void setConfirmpassword(String confirmpassword) {
+		this.confirmpassword = confirmpassword;
 	}
-	public String getInfo() {
-		return info;
+	public String getIntroduce() {
+		return introduce;
 	}
-	public void setInfo(String info) {
-		this.info = info;
+	public void setIntroduce(String introduce) {
+		this.introduce = introduce;
 	}
 	
 }

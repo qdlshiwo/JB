@@ -30,13 +30,13 @@ public class RegisterAction extends DispatcherAction {
 		UserService us = new UserServiceImpl();
 		User user = new User();
 		user.setId("Ö÷¼üid1");
-		user.setUsername(rf.getUname());
-		user.setPassword(rf.getUpass());
+		user.setUsername(rf.getUsername());
+		user.setPassword(rf.getPassword());
 		System.out.println(rf.getSex());
 		user.setGender(rf.getSex());
 		user.setEmail(rf.getEmail());
-		user.setTelephone(rf.getTelphone());
-		user.setIntroduce(rf.getInfo());
+		user.setTelephone(rf.getTelephone());
+		user.setIntroduce(rf.getIntroduce());
 		user.setActivecode("123");
 		user.setState(0);
 		user.setRole("È¨ÏÞ1");

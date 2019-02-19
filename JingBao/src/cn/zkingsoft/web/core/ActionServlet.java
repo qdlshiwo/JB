@@ -52,6 +52,7 @@ public class ActionServlet extends HttpServlet{
 				String mekey = me.getKey();
 				String[] mevalues = me.getValue();
 				String methodName = "set"+mekey.substring(0,1).toUpperCase()+mekey.substring(1);
+				System.out.println(methodName);
 				Method m=c.getMethod(methodName, new Class[]{String.class});
 				m.invoke(form, mevalues[0]);
 			}

@@ -18,7 +18,8 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public boolean addUser(User user, Connection conn) throws Exception {
 		// TODO Auto-generated method stub
-		String sql = "insert into web_user values(?,?,?,?,?,?,?,?,?,?,?)";
+		System.out.println("dao");
+		String sql = "insert into web_users values(?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, user.getId());
 		ps.setString(2, user.getUsername());
@@ -44,7 +45,7 @@ public class UserDaoImpl implements UserDao {
 	public boolean deleteUser(User user, Connection conn) throws Exception {
 		// TODO Auto-generated method stub
 		String id = user.getId();
-		String sql = "delect from web_user where id=?";
+		String sql = "delect from web_users where id=?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, id);
 		int n = ps.executeUpdate();
@@ -59,7 +60,7 @@ public class UserDaoImpl implements UserDao {
 	public boolean updateUser(User user, Connection conn) throws Exception {
 		// TODO Auto-generated method stub
 		String str = user.getId();
-		String sql = "update web_user set username=?,password=?,gender=?,email=?,telephone=?,introduce=?,activecode=?,state=?,role=?,registtime=?where id="
+		String sql = "update web_users set username=?,password=?,gender=?,email=?,telephone=?,introduce=?,activecode=?,state=?,role=?,registtime=?where id="
 				+ str;
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, user.getUsername());
@@ -84,7 +85,7 @@ public class UserDaoImpl implements UserDao {
 	public User selectUserById(String id, Connection conn) throws Exception {
 		// TODO Auto-generated method stub
 		User user = null;
-		String sql = "select * from web_user where id=?";
+		String sql = "select * from web_users where id=?";
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
@@ -115,7 +116,7 @@ public class UserDaoImpl implements UserDao {
 	public List<User> selectAllUserByCondition(Connection conn) throws Exception {
 		// TODO Auto-generated method stub
 		List<User> list = new ArrayList<User>();
-		String sql = "select * from web_user";
+		String sql = "select * from web_users";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
 		while (rs.next()) {
@@ -141,7 +142,7 @@ public class UserDaoImpl implements UserDao {
 	public List<User> selectAllUsers(Connection conn) throws Exception {
 		// TODO Auto-generated method stub
 		List<User> list = new ArrayList<User>();
-		String sql = "select * from web_user";
+		String sql = "select * from web_users";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
 		while (rs.next()) {
@@ -168,7 +169,7 @@ public class UserDaoImpl implements UserDao {
 	public List<User> selectAllUserByCondition(Connection conn, Map<String, String> condition) throws Exception {
 		// TODO Auto-generated method stub
 		List<User> list = new ArrayList<User>();
-		String sql = "select * from web_sptab where 1=1";
+		String sql = "select * from web_users  where 1=1";
 		Set<Map.Entry<String, String>> me = condition.entrySet();
 		Map<String, Integer> m = new HashMap<String, Integer>();
 		Set<Map.Entry<String, Integer>> mm = m.entrySet();
@@ -234,7 +235,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User selectUserByUsername(String username, Connection conn) throws Exception {
 		User user = null;
-		String sql = "select * from web_user where username=?";
+		String sql = "select * from web_users where username=?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, username);
 		ResultSet rs = ps.executeQuery();
