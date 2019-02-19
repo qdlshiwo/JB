@@ -48,12 +48,12 @@ public class DingdanServiceImpl implements DingdanService{
 	}
 
 	@Override
-	public List<Dingdan> selectAllDingdanByCondition(String uid) {
+	public List<Dingdan> selectAllDingdanByCondition(String did) {
 		Connection conn = DBHelper.getConnection();
 		List<Dingdan> list = null;
 		try {
 			conn.setAutoCommit(false);
-			list = ding.selectAllDingdanByCondition(uid, conn);
+			list = ding.selectAllDingdanByCondition(did, conn);
 			conn.commit();
 		} catch (Exception e) {
 			try {

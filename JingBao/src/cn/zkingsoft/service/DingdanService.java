@@ -10,5 +10,5 @@ public interface DingdanService {
 	public boolean deleteDingdan(Dingdan dingdan);
 	public boolean updateDingdan(Dingdan dingdan);
 	//根据用户id查找该用户所有未付款的订单信息
-	public List<Dingdan> selectAllDingdanByCondition(String uid);
+	public List<Dingdan> selectAllDingdanByCondition(String did);
 }
