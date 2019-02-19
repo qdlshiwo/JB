@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <script type="text/javascript">
 			function choiceSpt(id){
 				if(confirm("您真的确认添加吗？"+id)){
-					location.href="order_info.jsp?pid="+id;
+					location.href="order_info.jsp?pid="+id; 
 				}
 			}
 			function jump(){
@@ -560,7 +560,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	 %>                        
                         <div class="col-lg-6 col-md-6 col-sm-6">
                         	<div class="category-results">
+<<<<<<< HEAD
                             	<p>Results 1-<%=maxPage%> of <input type="text" id="ps" value="${pageSize }"/></p>
+=======
+                            	<p>Results 1-<%=maxPage %> of <input type="text" id="ps" value="${pageSize }"/></p>
+>>>>>>> branch 'master' of https://github.com/qdlshiwo/JB.git
                                 <p>Show
                                 <input type="text" id="pn" value="${pageNo }"/>
                                 per page
