@@ -19,7 +19,7 @@ import cn.zkingsoft.web.form.RegisterForm;
 /**
  * ÕâÊÇ×¢²á
  * @author Lxp
-  */
+   */
 public class RegisterAction extends DispatcherAction {
 
 	public ActionForward zhuce(HttpServletRequest req, HttpServletResponse resp, ActionForm form)

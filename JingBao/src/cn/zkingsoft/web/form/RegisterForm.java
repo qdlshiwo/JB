@@ -10,7 +10,7 @@ import cn.zkingsoft.web.core.ActionForm;
  *  
  */
 public class RegisterForm extends ActionForm implements Serializable{
-	private String email;
+	private String email; 
 	private String telephone;
 	private String username;
 	private String sex;
