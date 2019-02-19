@@ -66,5 +66,12 @@ public class Dingdan implements Serializable{
 	public void setDiscount(Double discount) {
 		this.discount = discount;
 	}
+	@Override
+	public String toString() {
+		return "Dingdan [did=" + did + ", uid=" + uid + ", pid=" + pid + ", dnum=" + dnum + ", dno=" + dno
+				+ ", address=" + address + ", discount=" + discount + "]";
+	}
+	
+	
 	
 }

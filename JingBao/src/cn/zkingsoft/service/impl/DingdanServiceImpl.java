@@ -17,6 +17,7 @@ public class DingdanServiceImpl implements DingdanService{
 	
 	@Override
 	public boolean addDingdan(Dingdan dingdan) {
+		System.out.println("234");
 		Connection conn = DBHelper.getConnection();
 		boolean flag = false;
 		try {
@@ -54,6 +55,27 @@ public class DingdanServiceImpl implements DingdanService{
 		try {
 			conn.setAutoCommit(false);
 			list = ding.selectAllDingdanByCondition(did, conn);
+			conn.commit();
+		} catch (Exception e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}finally{
+			DBHelper.closeConnection(conn);
+		}
+		return list;
+	}
+
+	@Override
+	public List<Dingdan> selectAllDingdanByCondition() {
+		System.out.println("123");
+		Connection conn = DBHelper.getConnection();
+		List<Dingdan> list = null;
+		try {
+			conn.setAutoCommit(false);
+			list = ding.selectAllDingdanByCondition(conn);
 			conn.commit();
 		} catch (Exception e) {
 			try {
