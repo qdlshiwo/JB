@@ -1,3 +1,6 @@
+<%@page import="cn.zkingsoft.pojo.Dingdan"%>
+<%@page import="cn.zkingsoft.service.impl.DingdanServiceImpl"%>
+<%@page import="cn.zkingsoft.service.DingdanService"%>
 <%@page import="cn.zkingsoft.pojo.Sptab"%>
 <%@page import="cn.zkingsoft.service.impl.SptabServiceImpl"%>
 <%@page import="cn.zkingsoft.service.SptabService"%>
@@ -656,39 +659,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<th>Total</th>
 												<th>Edit</th>
 											</tr> 
-											
+											<%
+									  			DingdanService ds = new DingdanServiceImpl();
+									  			List<Dingdan> list=null;
+									  			list = ds.selectAllDingdanByCondition();
+									  			System.out.print(list);
+									  		 %>
+									  		 
+											<%
+    											for(int i=0;i<list.size();i++){
+						    					Dingdan d= list.get(i);
+						    				%>	
 											<tr>
-												<td>1241254</td>
-												<td>Lorem ipsum dolor sit amet</td>
-												<td>Confirmed by shipper</td>
-												<td>$201.00</td>
-												<td>1</td>
-												<td>$22.00</td>
-												<td>$-32.00</td>
+												<td><%=d.getDid() %></td>
+												<td><%=d.getUid() %></td>
+												<td><%=s.getPstate() %></td>
+												<td><%=s.getPrice() %></td>
+												<td><%=d.getDnum() %></td>
+												<td><%=d.getDiscount() %></td>
+												<td><%=s.getPrice()-d.getDiscount() %></td>
 												<td>$190.00</td>
 											</tr>
+											<%	
+						    					}
+						    				 %>
 											
-											<tr>
-												<td>1241254</td>
-												<td>Lorem ipsum dolor</td>
-												<td>Confirmed by shipper</td>
-												<td>$201.00</td>
-												<td>1</td>
-												<td>$22.00</td>
-												<td>$-32.00</td>
-												<td>$190.00</td>
-											</tr>
-											
-											<tr>
-												<td>1241254</td>
-												<td>Lorem ipsum dolor</td>
-												<td>Confirmed by shipper</td>
-												<td>$201.00</td>
-												<td>1</td>
-												<td>$22.00</td>
-												<td>$-32.00</td>
-												<td>$190.00</td>
-											</tr>
 											
 											<tr>
 												<td class="align-right" colspan="5">Product prices result</td>
