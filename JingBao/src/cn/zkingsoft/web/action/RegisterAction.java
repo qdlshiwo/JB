@@ -19,7 +19,6 @@ import cn.zkingsoft.web.form.RegisterForm;
 /**
  * ÕâÊÇ×¢²á
  * @author Lxp
- *
  */
 public class RegisterAction extends DispatcherAction {
 

@@ -13,6 +13,7 @@ public class User {
 	private String role;
 	private String registime;
 	public User() {
+		// TODO Auto-generated constructor stub
 	}
 	public User(String id, String username, String password, String gender, String email, String telephone,
 			String introduce, String activecode, Integer state, String role, String registime) {

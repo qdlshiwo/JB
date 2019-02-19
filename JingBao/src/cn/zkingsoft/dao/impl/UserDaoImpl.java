@@ -17,7 +17,6 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public boolean addUser(User user, Connection conn) throws Exception {
-		// TODO Auto-generated method stub
 		System.out.println("dao");
 		String sql = "insert into web_users values(?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
