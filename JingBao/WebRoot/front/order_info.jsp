@@ -643,18 +643,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <div class="tab-content no-padding">
                                 	
                                     <div id="tab1">
-									
+									 
                                     	<table class="orderinfo-table">
                                 
 											<tr>
-												<th>SKU</th>
-												<th>Product name</th>
-												<th>Product status</th>
-												<th>Price</th>
-												<th>Qty</th>
-												<th>Tax</th>
+												<th>Order ID</th>
+												<th>Order Name</th>
+												<th>Order Status</th>
+												<th>Order Price</th>
+												<th>Order Number</th>
 												<th>Discount</th>
 												<th>Total</th>
+												<th>Edit</th>
 											</tr> 
 											
 											<tr>
