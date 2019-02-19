@@ -1,6 +1,8 @@
 package cn.zkingsoft.pojo;
 
-public class Dingdan {
+import java.io.Serializable;
+
+public class Dingdan implements Serializable{
 	private String uid;
 	private String pid;
 	private String pname;
