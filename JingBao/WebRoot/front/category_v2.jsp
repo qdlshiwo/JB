@@ -626,7 +626,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         <span class="add-to-cart">
                                             <span class="action-wrapper">
                                                 <i class="icons icon-basket-2"></i>
-                                                <span class="action-name" onclick="javascript:choiceSpt('<%=s.getPid()%>')">Add to cart</span>
+                                                <span class="action-name" onclick="javascript:choiceSpt('<%=s.getPname()%>')">Add to cart</span>
                                             </span>
                                         </span>
                                         <span class="add-to-favorites">
