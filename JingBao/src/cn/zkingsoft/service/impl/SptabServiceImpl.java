@@ -77,6 +77,7 @@ public class SptabServiceImpl implements SptabService{
 
 	@Override
 	public Sptab selectSptabsById(String pid) {
+		System.out.print("==========sptservice");
 		Connection conn = DBHelper.getConnection();
 		Sptab sp = null;
 		try {

@@ -168,7 +168,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="row">
 							
 							<div id="logo" class="col-lg-4 col-md-4 col-sm-4">
-								<a href="home_v1.jsp"><img src="img/logo.png" alt="Logo"></a>
+								<a href="index.jsp"><img src="img/logo.png" alt="Logo"></a>
 							</div>
 							
 							<nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
@@ -179,7 +179,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<li class="red">
 										<a href="wishlist.jsp"><i class="icons icon-heart-empty"></i>2 Items</a>
                                     </li>
-									<li class="orange"><a href="order_info.jsp"><i class="icons icon-basket-2"></i>17 Items</a>
+									<li class="orange"><a href="order_info.jsp"><i class="icons icon-basket-2"></i>2 Items</a>
                                     	<ul id="cart-dropdown" class="box-dropdown parent-arrow">
 											<li>
                                             	<div class="box-wrapper parent-border">

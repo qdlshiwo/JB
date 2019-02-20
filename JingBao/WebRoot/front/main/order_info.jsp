@@ -10,9 +10,9 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE html>
+<!DOCTYPE jsp>
 
-<html>
+<jsp>
 
     <head>
         
@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Title -->
-        <title>HomeShop - HTML Template</title>
+        <title>HomeShop - jsp Template</title>
         
         <!-- Stylesheets -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -33,13 +33,86 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<link rel="stylesheet" href="css/chosen.css">
         
         <!--[if lt IE 9]>
-            <script src="js/html5shiv.js"></script>
+            <script src="js/jsp5shiv.js"></script>
 			<link rel="stylesheet" href="css/ie.css">
         <![endif]-->
 		<!--[if IE 7]>
 			<link rel="stylesheet" href="css/fontello-ie7.css">
 		<![endif]-->
-        
+		<script type="text/javascript">
+			//定义一个trim方法去两头的空格
+			String.prototype.trim=function(){
+				var l = this.replace(this.match(/^\s+/),"");
+				var r = l.replace(this.match(/\s+$/),"");
+				return r;
+			};
+			var xmlHttp;
+			function createXmlHttp(){
+				if(window.XMLHttpRequest){
+					xmlHttp = new XMLHttpRequest();
+				}else{
+					try{
+						xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+					}catch(e){
+						xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+				}
+			} 
+			var did;
+			function deleteUsers(id){
+				if(confirm("是否真的要删除该行？")){
+					createXmlHttp();
+					id = encodeURI(encodeURI(id));
+					did = id;
+					xmlHttp.open("GET","deleteDingdan.jsp?did="+id,true);
+					xmlHttp.onreadystatechange=callback;
+					xmlHttp.send();
+				}
+			}
+			
+			function callback(){
+				if(xmlHttp.readyState==4){
+					if(xmlHttp.status==200){
+						var result= xmlHttp.responseText;
+						result = result.trim();
+						var tbody = document.getElementById("tbody");
+						if(result=="true"){
+							var tr = document.getElementById("tr"+did);
+							tbody.removeChild(tr);
+						}
+					}
+				}
+			}
+		</script>
+		
+		
+		
+      <!--   <script>
+function deleteUsers(did)
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("myDiv").innerjsp=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET","deleteDingdan.jsp?did="+did,true);
+	xmlhttp.send();
+}
+</script>
+        -->
     </head>
     
     
@@ -60,17 +133,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 							<nav id="top-navigation" class="col-lg-7 col-md-7 col-sm-7">
 								<ul class="pull-left">
-									<li><a href="create_an_account.html">My Account</a></li>
-									<li><a href="orders_list.html">List Order</a></li>
-									<li><a href="order_info.html">Checkout</a></li>
-									<li><a href="text_page.html">About Us</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="create_an_account.jsp">My Account</a></li>
+									<li><a href="orders_list.jsp">List Order</a></li>
+									<li><a href="order_info.jsp">Checkout</a></li>
+									<li><a href="text_page.jsp">About Us</a></li>
+									<li><a href="contact.jsp">Contact</a></li>
 								</ul>
 							</nav>
 							
 							<nav class="col-lg-5 col-md-5 col-sm-5">
 								<ul class="pull-right">
-									<li class="purple"><a href="#"><i class="icons icon-user-3"></i> ${loginmsg}</a>
+									<li class="purple"><a href="../create_an_account.jsp"><i class="icons icon-user-3"></i> ${loginmsg}</a>
 										<ul id="login-dropdown" class="box-dropdown">
 											<li>
                                             	<div class="box-wrapper">
@@ -99,12 +172,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                                 </div>
 												<div class="footer">
 													<h4 class="pull-left">NEW CUSTOMER?</h4>
-													<a class="button pull-right" href="create_an_account.html">Create an account</a>
+													<a class="button pull-right" href="../create_an_account.jsp">Create an account</a>
 												</div>
 											</li>
 										</ul>
 									</li>
-									<li><a href="#"><i class="icons icon-lock"></i> Create an Account</a></li>
+									<li><a href="../create_an_account.jsp"><i class="icons icon-lock"></i> Create an Account</a></li>
 								</ul>
 							</nav>
 							
@@ -121,18 +194,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="row">
 							
 							<div id="logo" class="col-lg-4 col-md-4 col-sm-4">
-								<a href="home_v1.html"><img src="img/logo.png" alt="Logo"></a>
+								<a href="index.jsp"><img src="img/logo.png" alt="Logo"></a>
 							</div>
 							
 							<nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
 								<ul class="pull-right">
 									<li class="blue">
-										<a href="compare_products.html"><i class="icons icon-docs"></i>0 Items</a>
+										<a href="compare_products.jsp"><i class="icons icon-docs"></i>0 Items</a>
                                     </li>
 									<li class="red">
-										<a href="wishlist.html"><i class="icons icon-heart-empty"></i>2 Items</a>
+										<a href="wishlist.jsp"><i class="icons icon-heart-empty"></i>2 Items</a>
                                     </li>
-									<li class="orange"><a href="order_info.html"><i class="icons icon-basket-2"></i>17 Items</a>
+									<li class="orange"><a href="order_info.jsp"><i class="icons icon-basket-2"></i>17 Items</a>
                                     	<ul id="cart-dropdown" class="box-dropdown parent-arrow">
 											<li>
                                             	<div class="box-wrapper parent-border">
@@ -196,7 +269,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                                 
                                                 <div class="box-wrapper no-border">
                                                 	<a class="button pull-right parent-background" href="#">Checkout</a>
-													<a class="button pull-right" href="order_info.html">View Cart</a>
+													<a class="button pull-right" href="order_info.jsp">View Cart</a>
                                                 </div>
 											</li>
 										</ul>
@@ -265,7 +338,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<ul>
 							
 							<li class="home-green">
-								<a href="home_v1.html">
+								<a href="home_v1.jsp">
 									<i class="icons icon-shop-1"></i>
 									<span class="nav-caption">Home</span>
 									<span class="nav-description">Variety of Layouts</span>
@@ -274,36 +347,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<ul class="normal-dropdown normalAnimation">
 									<li><a href="#">Layouts <i class="icons icon-right-dir"></i></a>
 										<ul class="normalAnimation">
-											<li><a href="home_v1.html">Layout 1</a></li>
-											<li><a href="home_v2.html">Layout 2</a></li>
-											<li><a href="home_v3.html">Layout 3</a></li>
+											<li><a href="home_v1.jsp">Layout 1</a></li>
+											<li><a href="home_v2.jsp">Layout 2</a></li>
+											<li><a href="home_v3.jsp">Layout 3</a></li>
 										</ul>
 									</li>
 									<li><a href="#">Headers <i class="icons icon-right-dir"></i></a>
 										<ul class="normalAnimation">
-											<li><a href="home_v1.html">Header 1</a></li>
-											<li><a href="home_v2.html">Header 2</a></li>
-											<li><a href="home_v3.html">Header 3</a></li>
-											<li><a href="category_v1.html">Header 4</a></li>
-											<li><a href="category_v2.html">Header 5</a></li>
-											<li><a href="products_page_v1.html">Header 6</a></li>
+											<li><a href="home_v1.jsp">Header 1</a></li>
+											<li><a href="home_v2.jsp">Header 2</a></li>
+											<li><a href="home_v3.jsp">Header 3</a></li>
+											<li><a href="category_v1.jsp">Header 4</a></li>
+											<li><a href="category_v2.jsp">Header 5</a></li>
+											<li><a href="products_page_v1.jsp">Header 6</a></li>
 										</ul>
 									</li>
 									<li><a href="#">Footers <i class="icons icon-right-dir"></i></a>
 										<ul class="normalAnimation">
-											<li><a href="home_v1.html#footer">Footer 1</a></li>
-											<li><a href="home_v2.html#footer">Footer 2</a></li>
-											<li><a href="home_v3.html#footer">Footer 3</a></li>
-											<li><a href="category_v1.html#footer">Footer 4</a></li>
+											<li><a href="home_v1.jsp#footer">Footer 1</a></li>
+											<li><a href="home_v2.jsp#footer">Footer 2</a></li>
+											<li><a href="home_v3.jsp#footer">Footer 3</a></li>
+											<li><a href="category_v1.jsp#footer">Footer 4</a></li>
 											<li><a href="category_v2.htm#footer">Footer 5</a></li>
-											<li><a href="products_page_v1.html#footer">Footer 6</a></li>
+											<li><a href="products_page_v1.jsp#footer">Footer 6</a></li>
 										</ul>
 									</li>
 									<li><a href="#">Sliders <i class="icons icon-right-dir"></i></a>
 										<ul class="normalAnimation">
-											<li><a href="home_v1.html">Revolution Slider</a></li>
-											<li><a href="home_v2.html">IOS Slider</a></li>
-											<li><a href="home_v3.html">Flex Slider</a></li>
+											<li><a href="home_v1.jsp">Revolution Slider</a></li>
+											<li><a href="home_v2.jsp">IOS Slider</a></li>
+											<li><a href="home_v3.jsp">Flex Slider</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -348,7 +421,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</li>
 							
 							<li class="blue">
-								<a href="category_v2.html">
+								<a href="category_v2.jsp">
 									<i class="icons icon-desktop-3"></i>
 									<span class="nav-caption">Computers</span>
 									<span class="nav-description">Laptops & Tablets</span>
@@ -356,7 +429,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</li>
 							
 							<li class="orange">
-								<a href="category_v1.html">
+								<a href="category_v1.jsp">
 									<i class="icons icon-mobile-6"></i>
 									<span class="nav-caption">Cell phones</span>
 									<span class="nav-description">Phones & Accessories</span>
@@ -364,7 +437,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</li>
 							
 							<li class="green">
-								<a href="blog.html">
+								<a href="blog.jsp">
 									<i class="icons icon-pencil-7"></i>
 									<span class="nav-caption">Blog</span>
 									<span class="nav-description">News & Reviews</span>
@@ -372,7 +445,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</li>
 							
 							<li class="purple">
-								<a href="contact.html">
+								<a href="contact.jsp">
 									<i class="icons icon-location-7"></i>
 									<span class="nav-caption">Contact</span>
 									<span class="nav-description">Store Locations</span>
@@ -511,7 +584,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 	<th>Email</th>
                                     <td>info@companyname.com</td>
                                 </tr> 
-                                
+                                 
                                 <tr>
                                 	<th>Company name</th>
                                     <td>company name</td>
@@ -648,7 +721,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <div id="tab1">
 									 
                                     	<table class="orderinfo-table">
-                                
+                                			<thead>
 											<tr>
 												<th>Order ID</th>
 												<th>Order Name</th>
@@ -659,58 +732,53 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<th>Total</th>
 												<th>Edit</th>
 											</tr> 
+											</thead>
 											<%
 									  			DingdanService ds = new DingdanServiceImpl();
+									  			
 									  			List<Dingdan> list=null;
 									  			list = ds.selectAllDingdanByCondition();
 									  			System.out.print(list);
 									  		 %>
 									  		 
 											<%
+												double discoun=0;
+												double zongjia=0;
     											for(int i=0;i<list.size();i++){
 						    					Dingdan d= list.get(i);
 						    				%>	
-											<tr>
+						    				<tbody id="tbody">
+											<tr id="tr<%=d.getDid()%>">
 												<td><%=d.getDid() %></td>
 												<td><%=d.getUid() %></td>
-												<td><%=s.getPstate() %></td>
-												<td><%=s.getPrice() %></td>
+												<%
+					                                 	SptabService spts=new SptabServiceImpl();
+					                                 	System.out.println("=============="+spts);
+														Sptab ss=spts.selectSptabsById(d.getPid());
+					                                 	System.out.println("==============ss"+ss);
+					                            %>
+												<td><%=ss.getPstate() %></td>
+												<td><%=ss.getPrice() %></td>
 												<td><%=d.getDnum() %></td>
 												<td><%=d.getDiscount() %></td>
-												<td><%=s.getPrice()-d.getDiscount() %></td>
+												<td><%=ss.getPrice()-d.getDiscount() %></td>
+												<% 
+													discoun=discoun+d.getDiscount();
+													zongjia=zongjia+ss.getPrice()-d.getDiscount();													
+												 %>
 												<td><a href="javascript:deleteUsers('<%=d.getDid() %>')">删除</a></td>
 											</tr>
+											</tbody>
 											<%	
 						    					}
 						    				 %>
 											
 											
 											<tr>
-												<td class="align-right" colspan="5">Product prices result</td>
-												<td>$22.00</td>
-												<td>$-32.00</td>
-												<td><strong>$190.00</strong></td>
-											</tr>
-											
-											<tr>
-												<td class="align-right" colspan="5">Shippment fee</td>
-												<td>$22.00</td>
-												<td>$-32.00</td>
-												<td><strong>$190.00</strong></td>
-											</tr>
-											
-											<tr>
-												<td class="align-right" colspan="5">Payment fee</td>
-												<td>$22.00</td>
-												<td>$-32.00</td>
-												<td><strong>$190.00</strong></td>
-											</tr>
-											
-											<tr>
 												<td class="align-right" colspan="5"><span class="price big">Total</span></td>
-												<td><strong>$22.00</strong></td>
-												<td><strong>$-32.00</strong></td>
-												<td><span class="price big">$920.00</span></td>
+												<td><%=discoun %></td>
+												<td><span class="price big"><%=zongjia %></span></td>
+												<td><a href="">结账</a></td>
 											</tr>
 											
 										</table>
@@ -1213,4 +1281,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
     </body>
     
-</html>
+</jsp>

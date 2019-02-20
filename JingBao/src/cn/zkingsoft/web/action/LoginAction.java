@@ -35,6 +35,9 @@ public class LoginAction extends DispatcherAction {
 					System.out.println("登录成功！");
 					req.getSession().setAttribute("loginmsg", "登录成功！");
 					req.getSession().setAttribute("user", user);//存用户登录的信息，可以在主页上显示用户名
+					if ("1".equals(user.getRole())) {
+						return new ActionForward(true,"manager");
+					}
 					return new ActionForward(true, "show");
 				} else {
 					System.out.println("密码错误！");

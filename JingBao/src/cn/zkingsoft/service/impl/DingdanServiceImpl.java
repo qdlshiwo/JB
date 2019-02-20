@@ -37,9 +37,24 @@ public class DingdanServiceImpl implements DingdanService{
 	}
 
 	@Override
-	public boolean deleteDingdan(Dingdan dingdan) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteDingdan(String did) {
+//		System.out.println("deleteservice");
+		Connection conn = DBHelper.getConnection();
+		boolean flag = false;
+		try {
+			conn.setAutoCommit(false);
+			flag = ding.deleteDingdan(did, conn);
+			conn.commit();
+		} catch (Exception e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}finally{
+			DBHelper.closeConnection(conn);
+		}
+		return flag;
 	}
 
 	@Override

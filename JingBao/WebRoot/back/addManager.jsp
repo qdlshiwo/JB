@@ -5,8 +5,8 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE jsp PUBLIC "-//W3C//DTD jsp 4.01 Transitional//EN">
+<jsp>
 <head>
 <base href="<%=basePath%>">
 
@@ -27,7 +27,7 @@
 <body>
 	
 
-	<form action="addManager.jsp" name="form1" method="post">
+	<form id="regform">
 		<table cellspacing="1" cellpadding="4" width="100%"
 			class="tableborder" id="table3">
 
@@ -38,7 +38,7 @@
 			<tr>
 				<td class="altbg1">管理员名称：</td>
 				<td class="altbg2" colspan="11"><input type="text"
-					name="userName" size="34"></td>
+					name="username" size="34"></td>
 			</tr>
 			<tr>
 				<td class="altbg1">密&nbsp; 码：</td>
@@ -54,12 +54,21 @@
 
 			<tr>
 				<td class="altbg1"></td>
-				<td class="altbg2" colspan="11"><input type="submit" value="提交"
-					name="B1" onClick="return fun_check_form();"> &nbsp; <input
+				<td class="altbg2" colspan="11"><input type="button" value="提交"
+					name="B1" onClick="regjump('zhuce')"> &nbsp; <input
 					type="reset" value="重置" name="B2"></td>
 			</tr>
 
 		</table>
 	</form>
+	
+	<script type="text/javascript">
+			function regjump(val){
+				var form = document.getElementById("regform");
+				form.action="register.do?param="+val;
+			    form.method="post";
+			    form.submit();
+			}
+	</script>
 </body>
-</html>
+</jsp>

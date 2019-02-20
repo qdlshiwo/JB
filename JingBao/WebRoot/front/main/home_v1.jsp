@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </nav>
           <nav class="col-lg-5 col-md-5 col-sm-5">
             <ul class="pull-right">
-              <li class="purple"><a href="#"><i class="icons icon-user-3"></i> ${loginmsg}</a>
+              <li class="purple"><a href="../create_an_account.jsp"><i class="icons icon-user-3"></i> ${loginmsg}</a>
                 <ul id="login-dropdown" class="box-dropdown">
                   <li>
                     <div class="box-wrapper">
@@ -92,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   </li>
                 </ul>
               </li>
-              <li><a href="#"><i class="icons icon-lock"></i> Create an Account</a></li>
+              <li><a href="../create_an_account.jsp"><i class="icons icon-lock"></i> Create an Account</a></li>
             </ul>
           </nav>
         </div>
@@ -102,7 +102,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <!-- Main Header -->
       <div id="main-header">
         <div class="row">
-          <div id="logo" class="col-lg-4 col-md-4 col-sm-4"> <a href="home_v1.jsp"><img src="img/logo.png" alt="Logo"></a> </div>
+          <div id="logo" class="col-lg-4 col-md-4 col-sm-4"> <a href="index.jsp"><img src="img/logo.png" alt="Logo"></a> </div>
           <nav id="middle-navigation" class="col-lg-8 col-md-8 col-sm-8">
             <ul class="pull-right">
               <li class="blue"> <a href="compare_products.jsp"><i class="icons icon-docs"></i>0 Items</a> </li>

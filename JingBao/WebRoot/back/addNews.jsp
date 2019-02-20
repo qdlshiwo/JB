@@ -4,8 +4,8 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE jsp PUBLIC "-//W3C//DTD jsp 4.01 Transitional//EN">
+<jsp>
   <head>
     <base href="<%=basePath%>">
     
@@ -81,4 +81,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			</table>
   </body>
-</html>
+</jsp>

@@ -5,8 +5,8 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE jsp PUBLIC "-//W3C//DTD jsp 4.01 Transitional//EN">
+<jsp>
 <head>
 <base href="<%=basePath%>">
 
@@ -89,4 +89,4 @@
 			</tr>
 	</table>
 </body>
-</html>
+</jsp>

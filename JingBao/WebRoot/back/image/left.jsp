@@ -1,11 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
+
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE jsp PUBLIC "-//W3C//DTD jsp 4.01 Transitional//EN">
+<jsp>
   <head>
     <base href="<%=basePath%>">
     
@@ -20,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<TITLE>控制面板</TITLE>
-<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META http-equiv=Content-Type content="text/jsp; charset=gb2312">
 <STYLE type=text/css>.menutitle {
 	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(images/menu_1.gif); MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 2px; WIDTH: 158px; CURSOR: pointer; COLOR: #ffffff; PADDING-TOP: 2px; BACKGROUND-COLOR: #698cc3; TEXT-ALIGN: center
 }
@@ -62,7 +63,7 @@ return true;
 window.onerror = killErrors;
 </SCRIPT>
 <LINK href="left.files/style_admin.css" type=text/css rel=stylesheet>
-<META content="MSHTML 6.00.2900.5726" name=GENERATOR>
+<META content="MSjsp 6.00.2900.5726" name=GENERATOR>
 
   </head>
   
@@ -78,9 +79,9 @@ border=0>
   <TR>
     <TD>
       <P align=center><FONT color=#ffffff>[<A 
-      href="http://localhost:8080/company/admin/adminOut.jsp" 
-      target=_parent><FONT color=#ffffff>安全退出</FONT> </A>] [<A 
-      href="http://localhost:8080/company/index.jsp" target=_parent><FONT 
+      href="front/create_an_account.jsp" 
+      target=_parent><FONT color=#ffffff>安全退出</FONT> </A>] <br>[<A 
+      href="front/create_an_account.jsp" target=_parent><FONT 
       color=#ffffff>返回首页</FONT> </A>]</FONT> </P></TD></TR></TBODY></TABLE>
 <DIV class=menutitle onclick="SwitchMenu('sub1')">.系统管理 
 <TABLE cellSpacing=0 cellPadding=0 width=158 border=0>
@@ -92,15 +93,16 @@ border=0>
 id=sub1>
 <TABLE class=tableborder cellSpacing=1 cellPadding=4 width=158>
   <TBODY>
+ 
   <TR class=altbg1>
     <TD align=middle width="100%" bgColor=#d6e0ef height=25>&nbsp;&nbsp; <IMG 
       height=13 src="left.files/icon_arrow_r.gif" width=13 border=0> <A 
-      class=menu href="addManager.htm" 
-      target=main>添加管理员</A> </TD></TR>
+      class=menu href="back/addManager.jsp" 
+      target=main>添加管理员 </A> </TD></TR>
   <TR class=altbg1>
     <TD align=middle width="100%" bgColor=#d6e0ef height=25>&nbsp;&nbsp; <IMG 
       height=13 src="left.files/icon_arrow_r.gif" width=13 border=0> <A 
-      class=menu href="http://localhost:8080/company/admin/showUserList.jsp" 
+      class=menu href="back/showUserList.jsp" 
       target=main>用户管理&nbsp;&nbsp;</A> </TD></TR></TBODY></TABLE></SPAN>
 <DIV class=menutitle onclick="SwitchMenu('sub8')">.新闻管理 
 <TABLE cellSpacing=0 cellPadding=0 width=158 border=0>
@@ -115,12 +117,12 @@ id=sub8>
   <TR>
     <TD align=middle width="100%" bgColor=#d6e0ef height=25><IMG height=13 
       src="left.files/icon_arrow_r.gif" width=13 border=0> <A class=menu 
-      href="http://localhost:8080/company/admin/addNews.jsp" 
+      href="back/addNews.jsp" 
       target=main>添加新闻</A> </TD></TR>
   <TR>
     <TD align=middle width="100%" bgColor=#d6e0ef height=25><IMG height=13 
       src="left.files/icon_arrow_r.gif" width=13 border=0> <A class=menu 
-      href="http://localhost:8080/company/admin/manageNews.jsp" 
+      href="back/managerNews.jsp" 
       target=main>管理新闻</A> </TD></TR></TBODY></TABLE></SPAN>
 <DIV class=menutitle onclick="SwitchMenu('sub3')">.商品管理 
 <TABLE cellSpacing=0 cellPadding=0 width=158 border=0>
@@ -135,12 +137,12 @@ id=sub3>
   <TR>
     <TD align=middle width="100%" bgColor=#d6e0ef height=25><IMG height=13 
       src="left.files/icon_arrow_r.gif" width=13 border=0> <A class=menu 
-      href="http://localhost:8080/company/admin/addProduct.jsp" 
+      href="back/addProduct.jsp" 
       target=main>添加商品</A> </TD></TR>
   <TR>
     <TD align=middle width="100%" bgColor=#d6e0ef height=25><IMG height=13 
       src="left.files/icon_arrow_r.gif" width=13 border=0> <A class=menu 
-      href="http://localhost:8080/company/admin/manageProduct.jsp" 
+      href="back/managerProduct.jsp" 
       target=main>管理商品</A> </TD></TR></TBODY></TABLE></SPAN></DIV>
   </body>
-</html>
+</jsp>

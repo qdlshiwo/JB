@@ -38,12 +38,12 @@ public class DingdanDaoImpl implements DingdanDao{
 	}
 
 	@Override
-	public boolean deleteDingdan(Dingdan dingdan, Connection conn) throws Exception {
+	public boolean deleteDingdan(String did, Connection conn) throws Exception {
 		boolean flag = false;
 		String sql = "delete from web_dingdan where did=?";
 		PreparedStatement ps = null;
 		ps = conn.prepareStatement(sql);
-		ps.setString(1, dingdan.getDid());
+		ps.setString(1, did);
 		int n = ps.executeUpdate();
 		if (n > 0) {
 			flag = true;
@@ -86,7 +86,7 @@ public class DingdanDaoImpl implements DingdanDao{
 
 	@Override
 	public List<Dingdan> selectAllDingdanByCondition(Connection conn) throws Exception {
-		System.out.println("456");
+//		System.out.println("selectdao");
 		List<Dingdan> list = new ArrayList<Dingdan>();
 		String sql = "select * from web_dingdan";
 		PreparedStatement ps = null;
